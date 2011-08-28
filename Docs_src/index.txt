@@ -1,0 +1,33 @@
+Python for Earth Scientists
+===========================
+:Author: Andrew Walker
+:Email: andrew.walker@bristol.ac.uk
+:Revision: 0.1
+
+These pages contain the notes and excercises for 
+a medium-length (two afternoon) course designed
+to introduce Earth Science PhD students to the 
+Python programming language and some of the 
+more useful libraries. I've assumed everybody 
+is happy with basic procedural programming 
+(i.e. can write a loop, if statment and 
+function in something like Fortran or Matlab).
+The course covers:
+
+* An introduction to the python language.
+* A tour of the python landscape (range of 
+interpreters and distributions, the standard
+library).
+* The language syntax.
+* link:ex1.html[Using the interpereter to perform simple calculations].
+* Python's type system.
+* Writing a script.
+* Modules and namespaces.
+* Reading data and running analysis.
+* Concepts of object-oriented programming.
+* A look at Numpy, Scipy and Matplotlib.
+* How to go further and find more help.
+
+
+
+
