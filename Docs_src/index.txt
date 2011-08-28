@@ -19,14 +19,15 @@ The course covers:
 interpreters and distributions, the standard
 library).
 * The language syntax.
-* link:ex1.html[Using the interpereter to perform simple calculations].
+* link:ex1.html[Using the interpereter to perform simple calculations]
+(exercise 1).
 * Python's type system.
 * Writing a script.
 * Modules and namespaces.
 * Reading data and running analysis.
 * Concepts of object-oriented programming.
 * A look at Numpy, Scipy and Matplotlib.
-* How to go further and find more help.
+* How to link:resources.html[go further and find more help].
 
 
 

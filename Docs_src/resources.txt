@@ -4,6 +4,11 @@ Resources
 :Email: andrew.walker@bristol.ac.uk
 :Revision: 0.1
 
+There is a wide array of documentation and help avalable 
+online which covers everything from learning python as a 
+first programming language to details of how to make 
+changes to the python interpreter.
+
 The first port of call for help is often the 
 link:http://docs.python.org/index.html[official documentation], 
 which includes:
