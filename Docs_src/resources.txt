@@ -1,0 +1,18 @@
+Resources
+=========
+:Author: Andrew Walker
+:Email: andrew.walker@bristol.ac.uk
+:Revision: 0.1
+
+The first port of call for help is often the 
+link:http://docs.python.org/index.html[official documentation], 
+which includes:
+
+* link:http://docs.python.org/tutorial/index.html[Tutorial]
+* link:http://docs.python.org/library/index.html[Library reference]
+* link:http://docs.python.org/reference/index.html[Language reference]
+* link:http://docs.python.org/faq/index.html[FAQs]
+
+
+* link:http://www.doughellmann.com/PyMOTW/[Python Module of the week]
+* 

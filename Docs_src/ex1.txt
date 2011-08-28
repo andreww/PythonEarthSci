@@ -1,0 +1,54 @@
+First steps
+===========
+:Author: Andrew Walker
+:Email: andrew.walker@bristol.ac.uk
+:Revision: 0.1
+
+Start up as terminal and then the python interpreter by typing `./python`. You
+should see the version information and a command prompt:
+
+[code,python]
+----
+Enthought Python Distribution -- www.enthought.com
+Version: 7.1-2 (32-bit)
+
+Python 2.7.2 |EPD 7.1-2 (32-bit)| (default, Jul 27 2011, 13:29:32) 
+[GCC 4.0.1 (Apple Inc. build 5493)] on darwin
+Type "packages", "demo" or "enthought" for more information.
+>>>
+----
+
+You can run simple python code from the command prompt.
+
+* What is `2+3`?
+* What is `2*6`?
+* What is `2-5`?
+* What is `6/3`?
+
+The arithmetic operators work as you may expect. 
+
+* What is `7/3`?
+* What is `-7/3`?
+
+Is this what you expected? 
+
+NOTE: Remember that numbers in python can be
+    integers or floats and that integer division rounds down. 
+
+* What is `type(3)`? 
+* What about `type(7)`?
+* So what is `type(7/3)`?
+* Does `7.0/3` give you the right answer?
+* Why?
+* What is `type(7.0)`
+* So what is `type(7.0/3)`?
+* What about `type(7/3.0)`?
+
+
+* what is `1.2 - 1.0`?
+* is that correct? what's going on?
+
+http://docs.python.org/tutorial/floatingpoint.html
+
+
+
