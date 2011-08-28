@@ -1,6 +1,9 @@
 
 html: index.html ex1.html resources.html
 
+pdf: index.txt
+	a2x index.txt
+
 index.html: index.txt
 	asciidoc -a icons -a theme=flask -o ../html/index.html index.txt
 
