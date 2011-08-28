@@ -2,6 +2,34 @@
 
 import math as m
 
+def great_circle(lat_1, long_1, lat_2, long_2):
+    """
+    This function returns the seperation between two points 
+    on the Earth's surface in km given the latitude and longitude
+    in degrees. Takes four arguments: long_1, lat_1, long_2, lat_2.
+
+    """
+    long_1 = m.radians(long_1)
+    lat_1 = m.radians(lat_1)
+    long_2 = m.radians(long_2)
+    lat_2 = m.radians(lat_2)
+
+    d = 2 * 6367.45 * m.asin(
+       m.sqrt(haversine(lat_2 - lat_1)
+            + m.cos(lat_1)*m.cos(lat_2) *
+            haversine(long_2 - long_1)))
+    return d
+
+def haversine(x):
+    """
+    The haversine formula 
+
+    see http://en.wikipedia.org/wiki/Haversine_formula
+    """
+    hav = (m.sin(x/2))**2
+    return hav
+
+
 def vincenty(lat1, lon1, lat2, lon2,
             r_major=6378.1370, r_minor=6356.752314, r_sphere=None):
     """
@@ -91,6 +119,9 @@ if __name__ == "__main__":
     import sys
     print "Latitude / longitude, point 1: " + sys.argv[1] + " / " + sys.argv[2]
     print "Latitude / longitude, point 2: " + sys.argv[3] + " / " + sys.argv[4]
+    distance = great_circle(float(sys.argv[1]),
+         float(sys.argv[2]), float(sys.argv[3]), float(sys.argv[4]))
+    print "Distance (spherical approx), km: " + str(distance)
     (distance, geodesic1, geodesic2) = vincenty(float(sys.argv[1]), 
         float(sys.argv[2]), float(sys.argv[3]), float(sys.argv[4]))
     print "Distance (Vincenty's method), km: " + str(distance)
