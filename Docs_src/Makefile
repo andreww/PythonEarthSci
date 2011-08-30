@@ -1,8 +1,8 @@
 
-html: index.html ex1.html resources.html
+html: index.html ex1.html resources.html all.html
 
-pdf: index.txt
-	a2x index.txt
+pdf: all.txt index.txt ex1.txt resources.txt
+	a2x all.txt
 
 index.html: index.txt
 	asciidoc -a icons -a theme=flask -o ../html/index.html index.txt
@@ -12,6 +12,10 @@ ex1.html: ex1.txt
 
 resources.html: resources.txt
 	asciidoc -a icons -a theme=flask -o ../html/resources.html resources.txt
+
+all.html: all.txt index.txt ex1.txt resources.txt
+	asciidoc -a icons -a theme=flask -o ../html/all.html all.txt
+
 
 clean:
 	rm -f ../html/index.html

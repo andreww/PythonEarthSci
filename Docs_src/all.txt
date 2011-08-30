@@ -1,0 +1,21 @@
+Combined Document Title
+=======================
+
+// Push titles down one level.
+:leveloffset: 1
+
+include::index.txt[]
+
+// Return to normal title levels.
+// :leveloffset: 0
+
+// A Top Level Section
+// -------------------
+// Lorum ipsum.
+
+// Push titles down one level.
+// :leveloffset: 1
+
+include::ex1.txt[]
+
+include::resources.txt[]
