@@ -4,6 +4,29 @@ First steps
 :Email: andrew.walker@bristol.ac.uk
 :Revision: 0.1
 
+In exercise you will learn how to use a
+Python interpreter interactively and to run simple pieces 
+of code. Using this knowledge you will investigate the 
+basic syntax of a Python program, learn what many of the 
+operators and keywords do, and explore the Python type system 
+and its semantics.  The tasks were written to target 
+the CPython interpreter and, in particular, the Enthought 
+Python Distribution (EPD) installed on a Mac, but everything 
+here should be portable between different operating systems, 
+interpreters and Python distributions. 
+
+Work through the following tasks in order, they should be 
+self-explanatory but do ask if you have a problem. It doesn't 
+matter too much if you don't manage to finish this afternoon, 
+getting to the end of task XXX is all that's needed to allow 
+you to do the second exercise. However, you should try and 
+find time to look at everything before Thursday afternoon.  
+Python code and output is typeset in `monotype` font, and 
+this can be typed directly into the interpreter. 
+
+Task 1: Assignment, equality and logic
+--------------------------------------
+
 Start up as terminal and then the python interpreter by typing `./python`. You
 should see the version information and a command prompt:
 
@@ -18,7 +41,58 @@ Type "packages", "demo" or "enthought" for more information.
 >>>
 ----
 
-You can run simple python code from the command prompt.
+You can run simple python code from the "`>>>`" command prompt.
+
+* Let `a = 1` (type "a=1" at the command prompt). What is `a` (type "a)?
+* Let `b = 2`. What is `b`?
+* Let `c = 2.75`. What is `c`?
+* What is `b` after you type `b=a`?
+* What is `a`?
+
+`a`, `b`, and `c` are variables, `1`, `2` and `2.75` are values, `=` is 
+the assignment operator.
+
+* What is `f`?
+
+NOTE: You should see an error as `f` has not been defined. This is useful as it
+    helps avoid turning simple typo's into hard to fix bugs. 
+
+* Let `e = 2` and `f = 3`.
+* Is `e == b`?
+* Is `f > e`?
+* Is `c < f`?
+* Is `c < a`?
+* Is `a <= e`?
+* Is `e >= a`?
+* Let `t = True`. What is `t`?
+
+`==`, `>`, `<`, `<=` and `>=` are the basic logical operators used to test for equality,
+greater than, less than, less than or equals and greater than or equals. `True`
+and `False` are logical values representing truth and falsehood.
+
+WARNING: `==` and `=` do different things; `True` and `False` must be capitalised. 
+
+* What is `not True`
+* What is `not False`
+* What is `(e == b) and (c < f)`?
+* What is `(e < 3) and t`?
+* What is `True and False`?
+* What is `False and False`?
+* What is `True and True`?
+* What is `True or False`?
+* What is `not (True or False)`?
+
+The Boolean operators `and`, `or`, and `not`, can be used to 
+combine logical tests. Brackets (parentheses) can be used to group and 
+order them.
+
+Quit the interpretor (type `quit()` or Ctrl-D).
+
+
+Task 3: Basic mathematical operators and scalar types
+-----------------------------------------------------
+
+Now look at how python handles mathematics. Beware, there may by one or two surprises.  
 
 * What is `2+3`?
 * What is `2*6`?
@@ -45,8 +119,8 @@ NOTE: Remember that numbers in python can be
 * What about `type(7/3.0)`?
 
 
-* what is `1.2 - 1.0`?
-* is that correct? what's going on?
+* What is `1.2 - 1.0`?
+* Is that correct? what's going on?
 
 http://docs.python.org/tutorial/floatingpoint.html
 
