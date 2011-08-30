@@ -1,5 +1,5 @@
-First steps
-===========
+Exercise 1: First steps
+=======================
 :Author: Andrew Walker
 :Email: andrew.walker@bristol.ac.uk
 :Revision: 0.1
@@ -43,7 +43,7 @@ Type "packages", "demo" or "enthought" for more information.
 
 You can run simple python code from the "`>>>`" command prompt.
 
-* Let `a = 1` (type "a=1" at the command prompt). What is `a` (type "a)?
+* Let `a = 1` (type "a=1" at the command prompt). What is `a` (type "a")?
 * Let `b = 2`. What is `b`?
 * Let `c = 2.75`. What is `c`?
 * What is `b` after you type `b=a`?
@@ -89,10 +89,150 @@ order them.
 Quit the interpretor (type `quit()` or Ctrl-D).
 
 
+Task 2: Block statments
+-----------------------
+
+The python interpreter can also be used to execute a 
+series of statements in a file. These statements are 
+executed in sequence from the first line to the last. 
+Use your favorite text editor to create a file called 
+`count.py` containing the following python code:
+
+[code,python]
+----
+i = 1
+while (i < 10):
+    print i
+    i = i + 1
+print "The end"
+----
+
+Run this code by typing `python ./count.py` at the shell 
+command prompt. What is printed to the screen?  Is 
+this what you expect?
+
+You should see the numbers 1 to 9 and the string "The end"
+printed before the interpreter exits and you are returned 
+to the command prompt. The while statement begins a block 
+of code that is executed in a loop until some logical 
+condition is false. What is the logical test in your count 
+program? Is this tested before or after the block of code 
+guarded by the while statement is run? 
+
+Modify the logic in your program to make it count to 10. 
+Is there another way to change the logic to achieve the 
+same thing? Now change the program to count backwards 
+from 10 to 1. Change it again to only print the even numbers. 
+
+Often, one of the most disconcerting features of Python is that 
+blocks of code are delimited by indentation. Most programmers 
+will indent loops and other blocks of code they write but 
+Python is unusual in demanding indentation and using it as 
+part of the semantics of the language. If you've not already 
+inadvertently found out, see what happens if you change your 
+counting program so that the indentation is not consistent. 
+For example, indent the `print` more than the `i = i + 1` line.  
+
+NOTE: Although Python allows flexibility when indenting blocks 
+of code, the use of four space characters is strongly 
+recommended by the semi-official style guide 
+(link:http://www.python.org/dev/peps/pep-0008/[PEP 8]). 
+Most code you read will have blocks indented with four spaces. 
+Most code you write should also use four spaces for indentation.
+
+What does the following code snippet do? 
+
+[code,python]
+----
+def count():
+    i = 1
+    while (i < 10):
+        print i
+        i = i + 1
+print "The end"
+----
+
+Are you sure? It's in the file `count_func.py`, run it to find out.
+
+Although Python programs are executed sequentially, from the start 
+to the end of the file, like many languages, you can specify a 
+piece of code should form a subroutine or function that can be 
+run later. When the interpreter reaches a block of code guarded 
+by the `def` statement a function is defined. The function is not 
+run until it is called by name. Modify `count_func.py` to call 
+the count function:
+
+[code,python]
+----
+def count():
+    i = 1
+    while (i < 10):
+        print i
+        i = i + 1
+count()
+print "The end"
+----
+
+What does this code do?
+
+What happens if you try and call the function before 
+the function has been defined? Does this work:
+
+[code,python]
+----
+count()
+def count():
+    i = 1
+    while (i < 10):
+        print i
+        i = i + 1
+count()
+print "The end"
+----
+
+Functions can (optionally) have one or more arguments 
+(in the parentheses). These allow the function to be 
+more general. Modify your code to accept an argument, 
+`n`, the upper limit of the printed numbers, and `m` 
+the lower limit.  Print three lists of numbers, 
+1 – 10, 14 – 27,  and 88 – 96.
+
+NOTE: Argument lists to Python functions allow 
+considerable flexibility. It's easy to give 
+functions optional arguments, arguments with default 
+values, and even accept lists of arguments without 
+knowing what they will be when you write the function. 
+Functions don't need to be given names. Functions can 
+take functions as arguments, can call them (and can call 
+themselves recursively) and functions can return 
+other functions. For example, you can write a general 
+integration routine without knowing the function you 
+will be integrating. We will look at some of these 
+features later in the course. A good introduction 
+can also be found in Chapter 
+link:http://docs.python.org/tutorial/controlflow.html#defining-functions[4.6] 
+and link:http://docs.python.org/tutorial/controlflow.html#more-on-defining-functions[4.7] 
+of the Python tutorial.
+
+The third block statement allows pieces of code to be 
+executed conditionally. What does the following code print?
+
+XXX XXX
+
+Are you sure? It's in the file `count_if.py`, run 
+it to find out.
+
+The block of indented code guarded by an if 
+statement is only executed when the condition is 
+true. Note that we can embed
+
+XXX XXX
+
 Task 3: Basic mathematical operators and scalar types
 -----------------------------------------------------
 
-Now look at how python handles mathematics. Beware, there may by one or two surprises.  
+Now look at how python handles mathematics. Beware, there may by one or two surprises.
+Use the interpreter interactively to decide:
 
 * What is `2+3`?
 * What is `2*6`?
@@ -122,7 +262,68 @@ NOTE: Remember that numbers in python can be
 * What is `1.2 - 1.0`?
 * Is that correct? what's going on?
 
+XXX 
+
 http://docs.python.org/tutorial/floatingpoint.html
+
+XXX - complex numbers...
+
+Task 4: Strings 
+---------------
+
+Another data type in Python is the string. Literal 
+strings are embedded in single or double quotes 
+and strings can be assigned to variables just 
+like the other types:
+
+* If `a = "Some text"`, what is `type(a)`?
+* What is  `a[0]`?
+* And `a[0:4]`?
+* What is `a[8]`?
+* What is `a[5:9]`?
+* What about `a[5:]`?
+* What is `a[:]`? Is this any different from `a`?
+* What is `a[:4]?
+
+In Python strings are a sequence of characters 
+numbered from 0.  Sub-strings can be accessed 
+using an index notation using brackets (not 
+parentheses) containing integers separated by 
+colons. When only one index is provided a single 
+character is returned. When two indices are provided 
+a series of characters are returned from the first, 
+to one less than the second index. If left out (but 
+with the colon in place) the indices default to 
+the start and end of the string. 
+
+* What is `a + " some more text"`?
+* What about `a * 3`?
+* Do the `-` or `/` operators work on strings?
+
+When placed between strings, `+` acts as a 
+concatenation operator and `*` works as a 
+repetition operator.
+
+* What is ` a[0:9:2]`?
+* What about `a[-4:]`?
+* What is `a[-2:-1]`?
+* What is `a[::-1]`?
+* What happens if you try and change the "S" 
+into an "s" in `a`? Does `a[0] = "s"` work?
+
+The third list index specifies how the sub-string is 
+constructed by stepping through the string. Negative 
+indices count backwards from the end, or reverse 
+along the string. Note that strings are immutable. 
+You cannot use the index notation to change bits of 
+a string. We’ll cover this concept in more detail later.  
+
+* If `b = "1.0"` what is `type(b)`?
+* What is `float(b)`? What is its type?
+* If `c = "1"` what is its type?
+* What is `int(c)` and what is its type?
+* Can you turn `b` into an integer? What about `c` into a float?
+
 
 
 
