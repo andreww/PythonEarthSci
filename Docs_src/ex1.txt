@@ -18,8 +18,7 @@ interpreters and Python distributions.
 Work through the following tasks in order, they should be 
 self-explanatory but do ask if you have a problem. It doesn't 
 matter too much if you don't manage to finish this afternoon, 
-getting to the end of task XXX is all that's needed to allow 
-you to do the second exercise. However, you should try and 
+but you should try and 
 find time to look at everything before Thursday afternoon.  
 Python code and output is typeset in `monotype` font, and 
 this can be typed directly into the interpreter. 
@@ -217,16 +216,39 @@ of the Python tutorial.
 The third block statement allows pieces of code to be 
 executed conditionally. What does the following code print?
 
-XXX XXX
+[code,python]
+----
+i = 1
+while i <= 10:
+    if (i >= 5):
+        print i
+    i = i + 1
+
+print "The end"
+----
 
 Are you sure? It's in the file `count_if.py`, run 
 it to find out.
 
 The block of indented code guarded by an if 
 statement is only executed when the condition is 
-true. Note that we can embed
+true. Note that we can embed one indented block within
+another. What does the following print?
 
-XXX XXX
+[code,python]
+----
+i = 1
+while i <= 100:
+    if (i >= 5):
+        if (i < 15):
+            print i
+    i = i + 1
+
+print "The end"
+----
+
+Can you condese the two nested `if` statments into one with
+more complex logic?
 
 Task 3: Basic mathematical operators and scalar types
 -----------------------------------------------------
@@ -258,15 +280,38 @@ NOTE: Remember that numbers in python can be
 * So what is `type(7.0/3)`?
 * What about `type(7/3.0)`?
 
-
-* What is `1.2 - 1.0`?
+You can also do calculations with floating point numbers.
+* What is `1.0 - 0.5`?
+* What about `1.2 - 1.0`?
 * Is that correct? what's going on?
 
-XXX 
+WARNING: Floating point mathematics isn't quite like the 
+mathematics you learnt at school. On computers numbers are 
+represented internally in binary, as strings of 1s and 0s. 
+The set of real numbers that can be represented exactly in 
+a finite number of binary digits is different to the set of 
+real numbers that can be represented exactly in decimal. This 
+leads to some interesting issues discussed at the end of the 
+standard link:http://docs.python.org/tutorial/floatingpoint.html[Python Tutorial]
+and described in much more detail in the paper 
+link:http://download.oracle.com/docs/cd/E19957-01/806-3568/ncg_goldberg.html[What Every Computer Scientist Should Know About Floating-Point Arithmetic]
+It's worth knowing that python has support in the standard 
+library for fixed point numbers (i.e. decimal calculations 
+which are exact to a given number of decimal places) and 
+for rational numbers (fractions). These may be useful, but 
+will be slower (computer hardware is build for 
+floating point binary mathematics, it's 
+too expensive to fit hardware decimal units).
 
-http://docs.python.org/tutorial/floatingpoint.html
+* What is `1+2j`?
+* What is `type(1+2j)`?
+* What is `(1+2j)-(1-2j)`?
+* If `c = 2+4j` what is `c**2`?
+* What about `c + 1`?
+* What are `c.real` and `c.imag`?
+* And what is `c.conjugate()`?
 
-XXX - complex numbers...
+Complex numbers are built in. The operators work as you may expect.
 
 Task 4: Strings 
 ---------------
@@ -304,7 +349,7 @@ When placed between strings, `+` acts as a
 concatenation operator and `*` works as a 
 repetition operator.
 
-* What is ` a[0:9:2]`?
+* What is `a[0:9:2]`?
 * What about `a[-4:]`?
 * What is `a[-2:-1]`?
 * What is `a[::-1]`?
@@ -324,6 +369,145 @@ a string. We’ll cover this concept in more detail later.
 * What is `int(c)` and what is its type?
 * Can you turn `b` into an integer? What about `c` into a float?
 
+Task 5: Lists
+-------------
+
+Strings are the first of Python's built in sequence types; lists 
+are the second. To a large extent, if you know how to use one 
+sequence type you know them all. In a list instead of each 
+numbered "container" holding a single character, each container 
+can hold any variable. Start up a python intepreter.
+
+* If `a = [1, 2.3, 4.5, 'one', "1"]` what is `type(a)`?
+* What is `a[1]`?
+* What about `a[4]`?
+* What is `type(a[0])`?
+* What is the type of each element of a?
+* What is `a[3][1]`?
+
+Note that lists can contain variables of different types mixed 
+together. We can access characters within a string within a list 
+by using multiple indices next to each other. 
+
+* What is `a*2`?
+* What about `a+['the end of the list']`.
+* Do the `-` or `/` operators work on lists?
+* If `a[3] = 'two'` what is `a`?
+* We described strings as an immutable type. How could we describe lists? 
+
+* Let `b = [0, 1, 2, 3, 4]` and `c = range(5)`.
+* Are `b` and `c` the same? 
+* Does `b == c`?
+* Does `a == c`?
+* Make `a[1] = b`. What is a?
+* Notice that lists can contain other lists. 
+* What is `a[1][0]`?
+* Does `a == c` now?
+* What about `a[1] == c`?
+* If `d = []` what could you call `d`? Is `d` a list?
+
+Python contains several other built in sequence types (there are seven in 
+total). We'll briefly look at them later. Some work like strings 
+(and can only contain a particular type of data) and some work like 
+lists (and can contain any type of data). Some sequence types are 
+mutable and others are immutable. All sequence types support index 
+notation with brackets and colons, along with several other 
+operations including `+` and `*`.
+
+Task 6: Sequences and iteration
+-------------------------------
+
+We've seen that Python supports more than one sequence type. 
+When writing a program, sequences (usually lists) are commonly 
+used to store the working data. We often want to do "something" 
+to each item of data in turn: perhaps we want to calculate the 
+average of all the numbers in the list, maybe we want to find 
+the maximum or add a number to each element of the list. What 
+we need is a way to iterate through the list. A block of code 
+using the `for x in l:` statement allows us to do this. What 
+does the following program print?
+
+[code,python]
+----
+groups = ['BEEST', 'Geophyscis', 'Geochemistry',
+         'Palaeobiology and Biodiversity', 'Volcanology',
+         'Climate and Environmental Change']
+
+print "The School of Earth Sciences has six research groups:"
+
+for group in groups:
+    print "\t* " + group
+----
+
+The program can be found in the file `for_in.py`. Run it to confirm 
+your suspicion.
+
+WARNING: In Python `for x in l:` is quite different to `for` in C 
+or `do` in Fortran. It iterates through a list and it does not 
+denote a loop. However, Python's `for x in l:` can be used to build 
+a loop with little effort. (This is the same as the difference 
+between Perl's `for` and `foreach` constructs.)  
+
+Modify the program to print the numbers from 0 to 10. Use 
+the range function to generate the list. 
+
+With one argument, 'n', the range function generates a list of 
+'n' integers starting a zero. `range()` can also take two integer 
+arguments. What is the meaning of the first and second arguments 
+in this case? Modify the program to print the numbers from 1 to 10. 
+
+Range can also take a third argument. Modify the code to print the 
+even numbers between 1 and 10 using the three-argument form. 
+
+Does range accept four or more arguments? Does it accept negative 
+arguments? What do they do?
+
+It is sometimes necessary to iterate through two sequences together 
+in lock step. The `zip()` function can be used for this. What does 
+the following program (`zip.py`) print? Do you see how it works?
+
+[code,python]
+----
+names = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun',
+         'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
+
+rain = [10.2, 12.4, 9.4, 8.2, 8.9, 7.2, 3.9, 7.6, 8.0, 11.2, 10.5, 9.9]
+
+for month, inch in zip(names, rain):
+    print "In " + month + " there was " + str(inch) + " inches of rain"
+----
+
+Modify the program to calculate the average monthly rainfall in the 
+year and print this after the monthly report. Imperial measurements 
+are outdated. Convert the output into mm. 
+
+What does the following program (`caesar.py`) do? The variable names may help.
+
+[code, python]
+----
+shift = 3
+alphabet = 'abcdefghijklmnopqrstuvwxyz'
+cipherbet = alphabet[shift:27]+alphabet[0:shift]
+
+plaintext = 'the quick brown fox jumps over the lazy dog'
+ciphertext = []
+
+for p in plaintext:
+    if p == ' ': 
+        ciphertext.append(' ') # Keep the spaces
+    else:
+        for a, c in zip(alphabet, cipherbet):
+            if p == a:
+                ciphertext.append(c) 
+                break # No need to finish the inner loop
+
+ciphertext = ''.join(ciphertext) # Turn list into a string
+
+print plaintext
+print ciphertext 
+----
+
+Can you write a program to perform the inverse function? 
 
 
 
