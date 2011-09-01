@@ -127,10 +127,10 @@ Often, one of the most disconcerting features of Python is that
 blocks of code are delimited by indentation. Most programmers 
 will indent loops and other blocks of code they write but 
 Python is unusual in demanding indentation and using it as 
-part of the semantics of the language. If you've not already 
+part of the syntax of the language. If you've not already 
 inadvertently found out, see what happens if you change your 
 counting program so that the indentation is not consistent. 
-For example, indent the `print` more than the `i = i + 1` line.  
+For example, indent the `print` line more than the `i = i + 1` line.  
 
 NOTE: Although Python allows flexibility when indenting blocks 
 of code, the use of four space characters is strongly 
@@ -490,18 +490,16 @@ alphabet = 'abcdefghijklmnopqrstuvwxyz'
 cipherbet = alphabet[shift:27]+alphabet[0:shift]
 
 plaintext = 'the quick brown fox jumps over the lazy dog'
-ciphertext = []
+ciphertext = ''
 
 for p in plaintext:
     if p == ' ': 
-        ciphertext.append(' ') # Keep the spaces
+        ciphertext = ciphertext + ' ' # Keep the spaces
     else:
         for a, c in zip(alphabet, cipherbet):
             if p == a:
-                ciphertext.append(c) 
+                ciphertext = ciphertext + c 
                 break # No need to finish the inner loop
-
-ciphertext = ''.join(ciphertext) # Turn list into a string
 
 print plaintext
 print ciphertext 
