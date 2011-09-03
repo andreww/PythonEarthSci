@@ -295,11 +295,11 @@ leads to some interesting issues discussed at the end of the
 standard link:http://docs.python.org/tutorial/floatingpoint.html[Python Tutorial]
 and described in much more detail in the paper 
 link:http://download.oracle.com/docs/cd/E19957-01/806-3568/ncg_goldberg.html[What Every Computer Scientist Should Know About Floating-Point Arithmetic]
-It's worth knowing that python has support in the standard 
+It's worth knowing that Python has support in the standard 
 library for fixed point numbers (i.e. decimal calculations 
 which are exact to a given number of decimal places) and 
 for rational numbers (fractions). These may be useful, but 
-will be slower (computer hardware is build for 
+will be slower (computer hardware is built for 
 floating point binary mathematics, it's 
 too expensive to fit hardware decimal units).
 
