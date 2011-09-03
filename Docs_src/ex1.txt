@@ -328,7 +328,7 @@ like the other types:
 * What is `a[5:9]`?
 * What about `a[5:]`?
 * What is `a[:]`? Is this any different from `a`?
-* What is `a[:4]?
+* What is `a[:4]`?
 
 In Python strings are a sequence of characters 
 numbered from 0.  Sub-strings can be accessed 
