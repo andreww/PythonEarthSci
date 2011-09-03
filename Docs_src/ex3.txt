@@ -1,0 +1,82 @@
+iExercise 3: Object oriented programming
+========================================
+:Author: Andrew Walker
+:Email: andrew.walker@bristol.ac.uk
+:Revision: 0.1
+
+We've seen that it's not necessary to know about 
+object-oriented (OO) programming to write useful 
+tools using Python. However, Python is an OO 
+language and knowing something about how 
+object-orientation works and is implemented in 
+Python will help you understand many features of 
+the language. It is sometimes useful to write your 
+programs in an OO style. More commonly you will make 
+use of a library that provides an OO interface. Knowing 
+how to write your own OO interface will help you make 
+use of other peoples designs.
+
+In this session you will explore how to make use of 
+modules from the standard library that expose OO interfaces.
+You will then modify the rainfall analysis code you wrote on 
+Tuesday so that each weather station's data is represented by 
+an object. This will allow you to produce more complex 
+analysis easily without producing excessively complex code. 
+
+Task 1: Compressed data input – objects from the outside
+--------------------------------------------------------
+
+Data files are often compressed and it can be helpful 
+if your analysis code can read (and write) to compressed 
+files. As well as being convenient (you can avoid explicitly 
+compressing or decompressing files before and after you run 
+the analysis script) this can also improve execution time 
+(this is sometimes limited just by the process of getting 
+data to and from the disk). In common with all data types, 
+we have seen that Python’s built in file type is a class. 
+An instance of this type is returned by the built-in 
+`open()` function and each instance supports a range of 
+methods including iteration. The standard library includes 
+the link:http://docs.python.org/library/gzip.html[module `gzip`]
+ which implements the `GzipFile` class with 
+methods that simulate most of those provided by the built-in 
+file type. There is also a 
+link:http://docs.python.org/library/bz2.html[`bz2` module], 
+which does a similar 
+thing for bzip2 compression. The directory XXX contains the 
+same Met Office data you worked with on Tuesday but some files 
+have been compressed using either bzip2 or gzip. Modify your 
+final data file reading function to automatically accept 
+compressed files. You can assume that compressed files will 
+always have the .gz or .bz2 file extension.
+
+NOTE: The most obvious OO way to instantiate an object to 
+represent a compressed file is to make direct use of the 
+GzipFile class as follows:
+[code,python]
+----
+import gzip
+f = gzip.GzipFile('filename', 'rb')
+f.close()
+----
+However, this is different to the way that Python generates 
+built-in file objects using the `open()` function. A more 
+natural approach is probably to use the gzip module's `open()`
+function thus:
+[code,python]
+----
+import gzip
+f = gzip.open('filename', 'rb')
+# Do someting with f
+f.close()
+----
+
+Does your modified code work with uncompressed files as well
+as files compressed with both gzip and bzip2?
+
+TIP: You will need to be able to decide if the filename argument 
+represents a compressed file. One way to do this
+
+
+
+

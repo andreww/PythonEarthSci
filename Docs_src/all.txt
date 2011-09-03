@@ -18,5 +18,6 @@ include::index.txt[]
 
 include::ex1.txt[]
 include::ex2.txt[]
+include::ex3.txt[]
 
 include::resources.txt[]
