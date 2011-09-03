@@ -17,5 +17,6 @@ include::index.txt[]
 // :leveloffset: 1
 
 include::ex1.txt[]
+include::ex2.txt[]
 
 include::resources.txt[]
