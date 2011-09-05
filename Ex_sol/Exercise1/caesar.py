@@ -3,8 +3,8 @@ shift = 3
 alphabet = 'abcdefghijklmnopqrstuvwxyz'
 cipherbet = alphabet[shift:27]+alphabet[0:shift]
 
-plaintext = 'the quick brown fox jumps over the lazy dog'
-ciphertext = []
+plaintext = []
+ciphertext = 'wkh txlfn eurzq ira mxpsv ryhu wkh odcb grj'
 
 for p in plaintext:
     if p == ' ': 

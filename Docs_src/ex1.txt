@@ -1,4 +1,4 @@
-Exercise 1: First steps
+Practical 1: First steps
 =======================
 :Author: Andrew Walker
 :Email: andrew.walker@bristol.ac.uk
@@ -9,13 +9,13 @@ Python interpreter interactively and to run simple pieces
 of code. Using this knowledge you will investigate the 
 basic syntax of a Python program, learn what many of the 
 operators and keywords do, and explore the Python type system 
-and its semantics.  The tasks were written to target 
+and its semantics.  The exercises were written to target 
 the CPython interpreter and, in particular, the Enthought 
 Python Distribution (EPD) installed on a Mac, but everything 
 here should be portable between different operating systems, 
 interpreters and Python distributions. 
 
-Work through the following tasks in order, they should be 
+Work through the following exercises in order, they should be 
 self-explanatory but do ask if you have a problem. It doesn't 
 matter too much if you don't manage to finish this afternoon, 
 but you should try and 
@@ -23,8 +23,8 @@ find time to look at everything before Thursday afternoon.
 Python code and output is typeset in `monotype` font, and 
 this can be typed directly into the interpreter. 
 
-Task 1: Assignment, equality and logic
---------------------------------------
+Exercise 1: Assignment, equality and logic
+------------------------------------------
 
 Start up as terminal and then the python interpreter by typing `./python`. You
 should see the version information and a command prompt:
@@ -88,8 +88,8 @@ order them.
 Quit the interpretor (type `quit()` or Ctrl-D).
 
 
-Task 2: Block statments
------------------------
+Exercise 2: Block statments
+---------------------------
 
 The python interpreter can also be used to execute a 
 series of statements in a file. These statements are 
@@ -250,8 +250,8 @@ print "The end"
 Can you condese the two nested `if` statments into one with
 more complex logic?
 
-Task 3: Basic mathematical operators and scalar types
------------------------------------------------------
+Exercise 3: Basic mathematical operators and scalar types
+---------------------------------------------------------
 
 Now look at how python handles mathematics. Beware, there may by one or two surprises.
 Use the interpreter interactively to decide:
@@ -313,8 +313,8 @@ too expensive to fit hardware decimal units).
 
 Complex numbers are built in. The operators work as you may expect.
 
-Task 4: Strings 
----------------
+Exercise 4: Strings 
+-------------------
 
 Another data type in Python is the string. Literal 
 strings are embedded in single or double quotes 
@@ -368,9 +368,16 @@ a string. We’ll cover this concept in more detail later.
 * If `c = "1"` what is its type?
 * What is `int(c)` and what is its type?
 * Can you turn `b` into an integer? What about `c` into a float?
+* If `d = 4+7j` what is type(d)?
+* Can you `print d`?
+* Does `print d + " is a complex number"` work? 
+* Why not? How does Python know what `+` does?
+* What is `str(d)` and what is it's type?
+* Can you fix `print d + " is a complex number"` so that it does work?
+* Does this work with the other numerical types?
 
-Task 5: Lists
--------------
+Exercise 5: Lists
+-----------------
 
 Strings are the first of Python's built in sequence types; lists 
 are the second. To a large extent, if you know how to use one 
@@ -414,8 +421,8 @@ mutable and others are immutable. All sequence types support index
 notation with brackets and colons, along with several other 
 operations including `+` and `*`.
 
-Task 6: Sequences and iteration
--------------------------------
+Exercise 6: Sequences and iteration
+-----------------------------------
 
 We've seen that Python supports more than one sequence type. 
 When writing a program, sequences (usually lists) are commonly 
@@ -429,7 +436,7 @@ does the following program print?
 
 [code,python]
 ----
-groups = ['BEEST', 'Geophyscis', 'Geochemistry',
+groups = ['BEEST', 'Geophysics', 'Geochemistry',
          'Palaeobiology and Biodiversity', 'Volcanology',
          'Climate and Environmental Change']
 
@@ -478,8 +485,13 @@ for month, inch in zip(names, rain):
 ----
 
 Modify the program to calculate the average monthly rainfall in the 
-year and print this after the monthly report. Imperial measurements 
+year using two other variables and the `for` loop above. Print 
+this after the monthly report. Imperial measurements 
 are outdated. Convert the output into mm. 
+
+If `rain = [10.2, 12.4, 9.4, 8.2, 8.9, 7.2, 3.9, 7.6, 8.0, 11.2, 10.5, 9.9]`,
+what is `len(rain)`? What is `sum` rain? Calculate the average monthly rainfall
+without using `for`.
 
 What does the following program (`caesar.py`) do? The variable names may help.
 
