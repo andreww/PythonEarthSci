@@ -50,7 +50,9 @@ final data file reading function to automatically accept
 compressed files. You can assume that compressed files will 
 always have the .gz or .bz2 file extension.
 
-NOTE: The most obvious OO way to instantiate an object to 
+[NOTE]
+===============================
+The most obvious OO way to instantiate an object to 
 represent a compressed file is to make direct use of the 
 GzipFile class as follows:
 [code,python]
@@ -70,6 +72,7 @@ f = gzip.open('filename', 'rb')
 # Do someting with f
 f.close()
 ----
+===============================
 
 Does your modified code work with uncompressed files as well
 as files compressed with both gzip and bzip2?
