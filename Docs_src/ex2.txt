@@ -25,7 +25,6 @@ that are easily reusable. You will learn to design a
 script that can act as a module (and a module that can 
 act as a script). 
 
-
 The task you will focus on is the analysis of historical 
 monthly rainfall data for the south of England and Wales. 
 This data is made available by the Met Office and is stored 
@@ -35,21 +34,161 @@ these. You will use the same dataset on Thursday when you
 learn how to use Python to plot time-series and geographical 
 data, and perform more advanced analysis. 
 
-Task 1: Graphing rainfall
--------------------------
+Exercise 1: A first script
+--------------------------
 
-The file `XXX` (reproduced below) contains a snippet of 
-rainfall data covering the last twenty years for one weather 
-station. As you can see, the data is stored within the 
+Before making a start on the rainfall data we will look at how 
+to write a Python program that can be used from the command line. 
+In the final exercise of practical 1 you looked at how to make 
+Python perform encryption and decryption using the Caesar 
+cipher – a simple one-to-one substitution cipher with a key that 
+shifts the alphabet. This code has existed for at least two 
+millennia. In the earlier version of this code the plaintext 
+message (or the encoded ciphertext) is embedded with the Python 
+source code. This isn't very useful, as you would need to change 
+the source every time you wrote a new message or changed the key 
+(the shift). It would be helpful to be able to run this as a 
+script from the command line so, for example, you could enter 
+`python ./caesar.py encode 12 < plaintext.txt > ciphertext.txt` 
+to encode a message with a shift of 12. The file `caesar.py`, 
+reproduced below, shows how this can be done. Key lines are 
+described. Make sure you understand how this is supposed to work. 
+Fill in the blanks and test the resulting code.
+
+[code,python]
+----
+def encode(plaintext, shift):<1>
+
+    alphabet = 'abcdefghijklmnopqrstuvwxyz'
+    cipherbet = alphabet[shift:27]+alphabet[0:shift]
+
+    # Put code in here. <2>
+
+    ciphertext = ''.join(ciphertext) # Turn list into a string
+
+    return ciphertext
+
+def decode(ciphertext, shift):<1>
+
+    alphabet = 'abcdefghijklmnopqrstuvwxyz'
+    cipherbet = alphabet[shift:27]+alphabet[0:shift]
+
+    # Put code in here. <2>
+
+    plaintext = ''.join(plaintext) # Turn list into a string
+
+    return plaintext
+
+if __name__ == "__main__":<3>
+    import sys <4>
+    if (len(sys.argv)!=3): <5>
+        print "ERROR: Two arguments needed, mode and shift"
+    else:
+        mode = sys.argv[1] <6>
+        shift = int(sys.argv[2]) <7>
+        for line in sys.stdin: <8>
+            if mode == 'encode': <9>
+                print encode(line, shift) <10>
+            elif mode == 'decode':
+                print decode(line, shift)
+            else:
+                print "ERROR: mode must be encode or decode"
+----
+
+<1> `plaintext` and `ciphertext` are strings
+and `shift` is an integer. The encode and decode
+functions return strings.
+<2> You need to provide the body of this function
+<3> Things below this line only get executed if the file
+is run as a python program, not if it is loaded as a module
+<4> We need to `import` the `sys` module from the standard 
+library to access command line arguments
+<5> A check to see if we have the correct number of command line arguments
+<6> Read the mode from the command line (encode or decode)
+<7> Read the key (shift) from the command line. Note that we 
+need to change this from a string into a integer
+<8> Loop over the lines from standard input (`sys.stdin` 
+is a file type pre-connected to whatever file name comes after the `<` character
+<9> Call the appropriate function or raise an error
+<10> By default, `print` writes to standard output, this is 
+pre-connected to whatever file name follows the `>` character, 
+or prints to the teminal. 
+
+On unix like system, it is common to have the shell select the 
+interpreter rather than have the user specify it. That is, the 
+shell reads a "hashbang" line at the top of an executable text 
+file and uses this to select the python interpreter so the user 
+can enter `./caesar.py encode 12 < plaintext.txt > ciphertext.txt` 
+to encode a message. Make this possible by adding a suitable 
+hashbang and making the Python program executable.
+
+TIP: On unix like systems the `chmod` command is used to change 
+the permission bits of a file. You will need to set (`+`) the 
+execute (`x`) bit for yourself (the user, `u`) for the file 
+`caesar.py` by entering `chmod u+x caesar.py`. The shell will 
+need to find the Python interpreter. A particularly portable way 
+to set this up so that it does not matter where Python is installed
+is to add `#!/usr/bin/env python` to the top of your program. Further 
+information can be found by entering`man chmod` and `man env`.
+
+A useful form of documentation is to add a literal string (a "docstringr")
+ to the top of each function describing what it does.  The most 
+convenient form is to use three quotation marks (`""" some text """`) 
+before or after the string (so that you can break the documentation 
+over several lines). Add documentation to the two functions. Does 
+the script still work?
+
+
+Exercise 2: Graphing rainfall
+-----------------------------
+
+The file `plot_rain.py` (reproduced below) contains a snippet of 
+rainfall data covering data from 1992 - 2010 for one weather 
+station in Cambornei, Cornwall. As you can see, the data is stored within the 
 Python source file in a data structure that consists of
-XXX.  There is a subroutine that graphs the data and this 
+a dictionary for each year with the monthly rainfall
+stored in a list.  There is a subroutine that graphs the data and this 
 is used if you run the program. As well as an argument for 
 the data, the subroutine also accepts an optional second 
 argument for the annual rainfall. This should be expressed 
-as a XXX (there is an outline of this data structure in 
-the file. Write the Python code needed to calculate the 
-annual rainfall and fill out this data structure. Do the 
+as a dictionary with integer years as the keys and 
+floating point numbers as the values for the total 
+annual rainfall. Write the Python code needed to calculate the 
+annual rainfall and create this data structure. Pass the data
+structre into the plotting function and run the code. Do the 
 wettest years contain the wettest months?
+
+[code,python]
+----
+#!/usr/bin/env python
+
+# Import plotting modules - we will cover these on Thursday
+import matplotlib
+import matplotlib.pyplot as plt
+
+# 18 years of data
+monthly_data = {1992: [29.6, 65.0, 58.2, 103.9, 14.7, 9.9, 
+                       57.7, 154.4, 93.1, 95.7, 175.1, 124.3], 
+                2009: [146.0, 71.3, 48.8, 144.2, 45.2, 18.8,
+                       222.2, 68.8, 37.8, 93.4, 193.6, 101.8],
+                2010: [108.8, 63.0, 76.6, 35.6, 56.6, 34.0,
+                       78.2, 71.8, 83.6, 85.6, 164.8, 48.1]}
+
+def plot_rainfall(rainfall, annual=None):
+    # Plot the graph - don't worry about how this function works,
+    # we will look at it on Thursday.
+
+    # etc.
+
+    return fig
+
+if __name__ == "__main__":
+
+    # Calculate the annual rainfall here.
+
+    plot_rainfall(monthly_data)
+    plt.show()
+----
 
 Task 2: Reading a simplified data file
 --------------------------------------
