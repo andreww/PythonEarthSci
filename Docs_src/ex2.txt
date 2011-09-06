@@ -34,6 +34,13 @@ these. You will use the same dataset on Thursday when you
 learn how to use Python to plot time-series and geographical 
 data, and perform more advanced analysis. 
 
+CAUTION: Some aspects of this practical need extra Python 
+modules installed beyond those which make up the standard 
+library. In particular, the exercises make use of Matplotlib 
+and Basemap to plot the results of your programs. If you are 
+using your own computer basic installation instructions can 
+be found link:./installation.html[here]. 
+
 Exercise 1: A first script
 --------------------------
 
@@ -190,27 +197,34 @@ if __name__ == "__main__":
     plt.show()
 ----
 
-Task 2: Reading a simplified data file
---------------------------------------
+Exercise 3: Reading a simplified data file
+------------------------------------------
 
-The file NNN is a simplified version of the data file distributed 
-by the Met Office. It consists of N columns of data with one row 
-per month that the XXX weather station has been operating. The 
-columns are X Y Z. Modify the graphing program to read data from 
-this file and build the XXX data structure. Can you graph the 
+The file `cambornedata_simple.txt` is a simplified version of the data file distributed 
+by the Met Office. It consists of 7 columns of data with one row 
+per month that the Camborne weather station has been operating. The 
+columns are year, month (1-12), maximum temperature (degrees C), 
+minimum temperature (degrees C), number of days of air frost, 
+total rain for the month (mm) and total number of hours of 
+sun for the month. Modify the `plot_rain.py` program to read data from 
+this file and build the monthly data structure. Can you graph the 
 monthly and annual rainfall without further modifications to the 
-code? I hope you put the file reading machinery in a function. What 
-is the function's argument?
+code? How did you deal with missing months at the start and end of 
+the file? I hope you put the file reading machinery in a function. What 
+is the function's argument? 
 
 TIP: Remember that you can read lines from a file by opening it 
-and using the resulting file type in a `for line in file:` block
-ETC ETC ETC. Don't forget to close the file when you have finished 
+and using the resulting file type in a `for line in file:` block.
+In each iteration `line` will then correspond to a different month
+of data. You can extract each item of data by turning the string into
+a list by doing `list = line.split()`. `.split()` chops up input on 
+spaces by default. Don't forget to close the file when you have finished 
 with it. Remember that you'll need to change the string extracted 
 from the file into data of the float type.
 
 
-Task 3: Parsing the full file format
-------------------------------------
+Exercise 3: Parsing the full file format
+----------------------------------------
 
 The file format provided by the Met Office is a little more complex 
 than the file provided in task 2. Some of the data is estimated, 
@@ -221,36 +235,37 @@ What happens if you try to convert `12.4*` into a float (e.g.
 contain a large block of header text. Some of this is useful 
 (the station name on the first line, the location data on the 
 second) but some only helps people reading the file and mainly 
-gets in the way of your attempt to read the file. Modify your 
+gets in the way of your attempt to read the file. Finally, some
+data is missing (marked with `---`). Modify your 
 data file reading function to handle these two cases and put 
 the weather station name in a field called "name" in the 
 returned dictionary.  Read data from the file 
-called FULLDATAFILE.
+called `cambornedata.txt` and `cambridgedata.txt`. 
 
 TIP: Your `for line in file:` iteration will visit each line in 
 the file in turn. The Met Office header is always the same number 
 of lines, so you can simply keep track of how many lines you have 
 seen so far and only start reading monthly data after you have 
-seen N lines. Think back to how do you run a piece of code within 
+seen 8 lines. Think back to how do you run a piece of code within 
 the iteration conditionally?
 
 The location data in the data file is in an extremely unhelpful 
 format and, as far as I can see, isn't documented anywhere. It 
 turns out that the numbers before the N and E line are the 
 number of hundreds of meters east and north of a point south west 
-of the Schilly(sp.?) Islands. The numbers are a six figure 
+of the Scilly Isles. The numbers are a six figure 
 Ordinance Survey grid reference in disguise. I've provided a 
-module (in the file XXX) with functions to convert the location 
+module (in the file `metloc.py`) with functions to convert the location 
 to an (approximate) latitude and longitude. You have two options: 
 (1) Extract the numbers from the second line of the data file and 
-use my XXX function. If you do this you may want to explore Python's
+use my `met2latlon` function. If you do this you may want to explore Python's
 regular expression library. (2) Skip the data extraction part and 
-pass the whole second line (as a string) into my XXX function which 
-extracts the numbers for you. In either case, put the returned 
-location data in the data structure so we can plot the weather 
-stations on a map on Thursday.
+pass the whole second line (as a string) into my `parselocationlinelatlon`
+ function which 
+extracts the numbers for you. In either case, make your file reading function
+`return (data, stationName, lat, lon)` so that you can use this data.
 
-TIP: Remember that you will need to `import XXX` to 
+TIP: Remember that you will need to `import metloc` to 
 access my functions.
 
 
