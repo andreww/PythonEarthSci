@@ -268,4 +268,9 @@ extracts the numbers for you. In either case, make your file reading function
 TIP: Remember that you will need to `import metloc` to 
 access my functions.
 
+There is another function in the `metloc` module, `plot_location`. This takes 
+three arguments, the latitude, longitude (in degrees) and station name 
+(a string). Use this function to plot the station location at the very 
+end of your program. 
+
 

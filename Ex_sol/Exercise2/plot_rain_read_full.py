@@ -109,3 +109,4 @@ if __name__ == "__main__":
 
     plot_rainfall(monthly_data, annual_data)
     plt.show()
+    metloc.plot_location(lat, lon, stationName)
