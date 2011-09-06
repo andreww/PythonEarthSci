@@ -130,6 +130,66 @@ the `os.path` module. This takes a string as an argument returns
 a tuple who's second item is the final file extension 
 (`.txt`, `.gz` or `.bzip2`).   
 
+Exercise 3: Rainfall – an object from the inside
+------------------------------------------------
+
+The "dictionary of lists" data structure you used to 
+hold rainfall data in Practical 2 works, but is 
+unsatisfactory in a number of ways. The functions you 
+wrote were tied to the data structure so knowledge of 
+the data structure ended up being spread around your 
+code and refactoring becomes difficult. It would sometimes 
+be useful to generate a different "view" of the data, 
+say by providing a list of rainfall for each January 
+in the data set to make it easy to calculate the 
+average rainfall in that month. In this exercise 
+you should create a `Rainfall` class to represent 
+a weather station and the rainfall it has measured. 
+
+[NOTE]
+===============================
+Remember that the way to define a class in python 
+is to make use of the `Class` statement and define 
+functions for methods and variables for attributes. 
+Functions take an extra `self` argument and you need 
+an `__init__` method which gets called when you create 
+an instance.  The basic code looks like this:
+
+[code,python]
+----
+class Thing:
+    def __init__(self, constructer_argument):
+        # These values are created
+        # when the class is instantiated.
+        self.attribute = constructer_argument/7.65
+        self.counter = 0
+
+    def method(self, method_argument):
+        self.counter = self.counter + method_argument 
+        print self.counter
+----
+
+==============================
+
+The first step is to create the bare bones of your 
+`Rainfall` class reusing some of the code you wrote 
+on Tuesday. Start off with the class definition and 
+`__init__` method. `__init__` should take an argument 
+specifying the filename  where data will be read from. 
+What other argument is needed? Give your class 
+attributes for the weather station name, its latitude 
+and longitude. Store the data away inside the class as 
+a dictionary of lists.
+
+Now add methods. An `annual_rainfall` method could return 
+a dictionary with years as the keys and the total measured 
+rainfall as the values. An `average_month` could accept an 
+argument specifying the month and return the mean rainfall 
+for that month. 
+
+Can you use your new class to calculate the distance between 
+pairs of weather stations? Can you calculaute the difference
+in avarage rainfall in January for two weather stations?
 
 
 
