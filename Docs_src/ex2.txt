@@ -222,8 +222,46 @@ spaces by default. Don't forget to close the file when you have finished
 with it. Remember that you'll need to change the string extracted 
 from the file into data of the float type.
 
+Exercise 4: Mean monthly rainfall 
+---------------------------------
 
-Exercise 3: Parsing the full file format
+How wet is an average October in Camborne? What about an average 
+July? Write a function to calculate the mean monthly rainfall 
+for each calendar month from the dictionary of lists data structure 
+you can generate from a file. You can assume that any month that is 
+reported as having no rainfall has missing data. Ignore these months 
+when calculating the mean. Your function should return two 12-element 
+lists, one with the mean rainfall for each month and one with the 
+number of months included in the average. Print out a formatted list 
+of average rainfall. You should end up printing out something like 
+this:
+
+[code,python]
+----
+Jan 121.896969697 33
+Feb 91.7818181818 33
+Mar 80.7848484848 33
+Apr 69.9878787879 33
+May 63.8878787879 33
+Jun 59.1 33
+Jul 65.05 32
+Aug 67.934375 32
+Sep 74.7818181818 33
+Oct 113.748484848 33
+Nov 120.751515152 33
+Dec 130.312121212 33
+----
+
+Does the dictionary of lists data structure make this exercise easy? 
+Can you think of a data structure that would lend itself to this problem? 
+Finding that a task that should be easy seems to be difficult is often a 
+sign that the data structure is not a good match to the problem. Thinking 
+about the problem in terms of the way you represent the data can be helpful, 
+even if you need to change the way that data is stored in your application. 
+We will return to this theme on Thursday.
+
+
+Exercise 5: Parsing the full file format
 ----------------------------------------
 
 The file format provided by the Met Office is a little more complex 
