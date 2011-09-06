@@ -1,5 +1,5 @@
-Exercise 3: Object oriented programming
-=======================================
+Practical 3: Object oriented programming
+========================================
 :Author: Andrew Walker
 :Email: andrew.walker@bristol.ac.uk
 :Revision: 0.1
@@ -38,14 +38,37 @@ Write a simple Python program to calculate the average of 100 random
 numbers drawn from the range [0.0, 1.0). You will need to import the 
 `random` module, create an instance of the `random.Random` class, use 
 the instance's `seed()` function to set up the generator, and then use 
-the `random()` method to generate each random number. Remember that 
+the `random()` method to generate each random number. In this case, neither 
+the class constructor `random()` or `seed()` need arguments.
+
+[NOTE]
+=====
+Remember that 
 instances of any class look like variables and methods can be called 
 by appending a dot and the method name (with arguments in brackets) to 
-the instance. In this case, neither `random()` or 
-`seed()` need arguments.
+the instance. That is, a new instance of the class `Thing` is created 
+by the code `this_thing = Thing(constructer_argument)`. Methods and
+attributes of the instance `this_thing` can then be accessed as
+`this_thing.method(method_argument)` and `this_thing.attribute`.
+=====
 
+Another class provided by the standard library creates 
+`date` objects. This is available from the `datetime` module. 
+Unlike the random number class, the `date` class constructor 
+accepts arguments, specifically three integers giving the year,
+ month and day of the date to be represented. Start up a Python 
+interpreter and `import` the datetime module. Create two `date` 
+objects, one representing February 3, 1700 and one representing 
+October 4, 1701. What is the day of the week of these two dates? 
+You can use the `weekday()` method to find out (this returns 0 
+for Monday, 1 for Tuesday and 6 for Sunday).  How many days are 
+there between the two dates? (Note that arithmetic with date 
+objects return a `timedelta` object, these have the attribute 
+`days`.) Repeat the exercise for February and October 2000 and 
+2001. Is the number of days between the two dates the 
+same? If not, why not?
 
-Practical 2: Compressed data input – using objects for code reuse
+Exercise 2: Compressed data input – using objects for flexibility
 -----------------------------------------------------------------
 
 Data files are often compressed and it can be helpful 
@@ -100,7 +123,13 @@ Does your modified code work with uncompressed files as well
 as files compressed with both gzip and bzip2?
 
 TIP: You will need to be able to decide if the filename argument 
-represents a compressed file. One way to do this
+represents a compressed file. One way to do this is to use string 
+methods to examine the file name argument. A better (easer and 
+more portable) approach is to use the `splitext ()` function from 
+the `os.path` module. This takes a string as an argument returns 
+a tuple who's second item is the final file extension 
+(`.txt`, `.gz` or `.bzip2`).   
+
 
 
 
