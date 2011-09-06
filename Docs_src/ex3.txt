@@ -1,5 +1,5 @@
-iExercise 3: Object oriented programming
-========================================
+Exercise 3: Object oriented programming
+=======================================
 :Author: Andrew Walker
 :Email: andrew.walker@bristol.ac.uk
 :Revision: 0.1

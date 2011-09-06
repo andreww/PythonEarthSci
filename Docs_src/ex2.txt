@@ -260,7 +260,6 @@ about the problem in terms of the way you represent the data can be helpful,
 even if you need to change the way that data is stored in your application. 
 We will return to this theme on Thursday.
 
-
 Exercise 5: Parsing the full file format
 ----------------------------------------
 
@@ -274,7 +273,7 @@ contain a large block of header text. Some of this is useful
 (the station name on the first line, the location data on the 
 second) but some only helps people reading the file and mainly 
 gets in the way of your attempt to read the file. Finally, some
-data is missing (marked with `---`). Modify your 
+data is missing (marked `---`). Modify your 
 data file reading function to handle these two cases and put 
 the weather station name in a field called "name" in the 
 returned dictionary.  Read data from the file 
@@ -311,4 +310,24 @@ three arguments, the latitude, longitude (in degrees) and station name
 (a string). Use this function to plot the station location at the very 
 end of your program. 
 
+Exercise 6: Great-circle distances
+----------------------------------
+What is the distance between the Camborne and Cambridge weather stations? Write 
+a script to find out. This should take two arguments (the two files) and can 
+use your file reading function (imported, so your existing script behaves as 
+a Python module) to read the files. You can approximate the Earth as a sphere 
+with a radius, latexmath:[$r$], of 6367 km. With this 
+approximation the distance between two points 
+with latitude latexmath:[$\phi_1$] and latexmath:[$\phi_2$] and longitude separation 
+latexmath:[$\Delta \lambda$] is given by:
+
+latexmath:[$d = 2 r \arcsin(haversin(\phi_1-\phi_2) + \cos(\phi_1)\cos(\phi_2)haversin(\Delta \lambda))$]
+
+Where the Haversine function is defined by:
+
+latexmath:[$haversin(\theta) = \sin^2(\frac{\theta}{2}) = \frac{(1-\cos(\theta)}{2}$]
+
+Remember that you can access basic mathematical functions such as `sqrt`, `asin` and 
+`cos` from the `math` module in the standard library. Can you write a function to 
+perform a similar calculation for a non-spherical Earth?
 

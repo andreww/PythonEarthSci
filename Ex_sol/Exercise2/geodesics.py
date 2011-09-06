@@ -117,11 +117,13 @@ def vincenty(lat1, lon1, lat2, lon2,
 
 if __name__ == "__main__":
     import sys
-    print "Latitude / longitude, point 1: " + sys.argv[1] + " / " + sys.argv[2]
-    print "Latitude / longitude, point 2: " + sys.argv[3] + " / " + sys.argv[4]
-    distance = great_circle(float(sys.argv[1]),
-         float(sys.argv[2]), float(sys.argv[3]), float(sys.argv[4]))
+    import plot_rain_read_full
+
+    (monthly_data1, stationName1, lat1, lon1) = plot_rain_read_full.read_file(sys.argv[1])
+    (monthly_data2, stationName2, lat2, lon2) = plot_rain_read_full.read_file(sys.argv[2])
+    print "Latitude / longitude, point 1: " + str(lat1) + " / " + str(lon1)
+    print "Latitude / longitude, point 2: " + str(lat2) + " / " + str(lon2)
+    distance = great_circle(lat1, lon1, lat2, lon2)
     print "Distance (spherical approx), km: " + str(distance)
-    (distance, geodesic1, geodesic2) = vincenty(float(sys.argv[1]), 
-        float(sys.argv[2]), float(sys.argv[3]), float(sys.argv[4]))
+    (distance, geodesic1, geodesic2) = vincenty(lat1, lon1, lat2, lon2)
     print "Distance (Vincenty's method), km: " + str(distance)
