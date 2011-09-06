@@ -21,10 +21,32 @@ modules from the standard library that expose OO interfaces.
 You will then modify the rainfall analysis code you wrote on 
 Tuesday so that each weather station's data is represented by 
 an object. This will allow you to produce more complex 
-analysis easily without producing excessively complex code. 
+analysis easily without producing excessively complex code. First
+we will look at some objects from the standard library
 
-Task 1: Compressed data input – objects from the outside
---------------------------------------------------------
+Exercise 1: Random numbers and dates – objets from the outside
+--------------------------------------------------------------
+
+It is often useful to be able to generate (pseudo-) random numbers 
+for use in numerical programs. These can be used for Monte-Carlo 
+simulation or error analysis. Random number generators can be 
+modelled as objects. The way numbers are generated are hidden 
+in a "black box". Methods are provided to set up (seed) the 
+generator and return a random number drawn from some distribution. 
+
+Write a simple Python program to calculate the average of 100 random 
+numbers drawn from the range [0.0, 1.0). You will need to import the 
+`random` module, create an instance of the `random.Random` class, use 
+the instance's `seed()` function to set up the generator, and then use 
+the `random()` method to generate each random number. Remember that 
+instances of any class look like variables and methods can be called 
+by appending a dot and the method name (with arguments in brackets) to 
+the instance. In this case, neither `random()` or 
+`seed()` need arguments.
+
+
+Practical 2: Compressed data input – using objects for code reuse
+-----------------------------------------------------------------
 
 Data files are often compressed and it can be helpful 
 if your analysis code can read (and write) to compressed 
