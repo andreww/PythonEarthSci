@@ -69,7 +69,8 @@ def encode(plaintext, shift):<1>
     alphabet = 'abcdefghijklmnopqrstuvwxyz'
     cipherbet = alphabet[shift:27]+alphabet[0:shift]
 
-    # Put code in here. <2>
+    # Put code in here. 
+    <2>
 
     ciphertext = ''.join(ciphertext) # Turn list into a string
 
@@ -80,7 +81,8 @@ def decode(ciphertext, shift):<1>
     alphabet = 'abcdefghijklmnopqrstuvwxyz'
     cipherbet = alphabet[shift:27]+alphabet[0:shift]
 
-    # Put code in here. <2>
+    # Put code in here. 
+    <2>
 
     plaintext = ''.join(plaintext) # Turn list into a string
 
