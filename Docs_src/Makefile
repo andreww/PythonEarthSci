@@ -1,7 +1,7 @@
 
-html: index.html ex1.html ex2.html ex3.html resources.html 
+html: index.html ex1.html ex2.html ex3.html ex4.html resources.html all.html
 
-pdf: all.txt index.txt ex1.txt ex2.txt ex3.txt resources.txt
+pdf: all.txt index.txt ex1.txt ex2.txt ex3.txt ex4.txt resources.txt
 	a2x all.txt
 
 index.html: index.txt
@@ -16,6 +16,9 @@ ex2.html: ex2.txt
 ex3.html: ex3.txt
 	asciidoc -a icons -a theme=flask -o ../html/ex3.html ex3.txt
 
+ex4.html: ex4.txt
+	asciidoc -a icons -a theme=flask -o ../html/ex4.html ex4.txt
+
 resources.html: resources.txt
 	asciidoc -a icons -a theme=flask -o ../html/resources.html resources.txt
 
@@ -27,4 +30,6 @@ clean:
 	rm -f ../html/index.html
 	rm -f ../html/ex1.html
 	rm -f ../html/ex2.html
+	rm -f ../html/ex3.html
+	rm -f ../html/ex4.html
 
