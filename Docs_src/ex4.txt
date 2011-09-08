@@ -22,7 +22,7 @@ facilities provided by link:http://numpy.scipy.org/[NumPy].
 Chief amongst these is a high performance data object called 
 an `array`. This is multi-dimensional and has elements of a 
 fixed type, corresponding to a fixed storage size in memory. 
-This property makes operations on the array much more efficient 
+This property makes operations on the whole array much more efficient 
 than operations on the built in Python data types. Many of the 
 internals of NumPy and SciPy are implemented in C 
 (with some Fortran) and this also yields high performance. 
@@ -60,40 +60,41 @@ opting to `import numpy as np`.
 * If `l = [1.0, 2.3, 4.74, 7]` what is `type(l)`? What 
 about `type(l[0])` and `type(l[3])`?
 * NumPy arrays can be constructed using the `array` 
-class. If `a=np.array(l)`, what is a?
-* What is type(a)? What about `type(a[0])` and 
+class. If `a=np.array(l)`, what is `a`?
+* What is `type(a)`? What about `type(a[0])` and 
 `type(a[3])`? How do arrays differ from lists?
 * Arrays can also be returned from other functions. 
 If `b = np.zeros((4))`, and `c=np.ones((5))` what are 
 `b` and `c`? What are `type(b)` and `type(c)`?
 * Are NumPy arrays mutable? Can the types of the elements 
-be changed? Can you change c[2] to be equal to 3 and c[4] 
+be changed? Can you change `c[2]` to be equal to `3` and `c[4]`
 to be equal to the string `"one"`?
-* What is np.ones((3,3))? np.ones((3,3,3,3))? What are 
-these object's `.size`? What are the object's `shape`?
+* What are `np.ones((3,3))` and `np.ones((3,3,3,3))`? What are 
+the `.size` and `.shape` of these objects?
 * Can you iterate through a NumPy array? What is 
 `i` in each iteration of `for i in np.ones((3,3)):`?
-* What is a + np.ones((4))?
-* What is np.ones((4))*3? What about `(np.ones((3,3))*3) 
-* (np.ones((3,3))*2)`? Is this matrix multiplication or not?
-* What is a[0:2]? What about a[0::2]? Does array indexing 
+* What is a `+ np.ones((4))`?
+* What is `np.ones((4))*3`? What about 
+`(np.ones((3,3))*3)*(np.ones((3,3))*2)`? 
+Is this matrix multiplication or not?
+* What is `a[0:2]`? What about `a[0::2]`? Does array indexing 
 work in the same way as list and string indexing?
 
-If you have used Matlab, you will find that NumPy arrays 
+If you have used Matlab, you should find that NumPy arrays 
 remind you of Matlab arrays. There are some important 
 differences (square brackets rather than parenthesises, 
 element wise operations rather than operators from linear 
 algebra). There is even a short 
 link:http://www.scipy.org/NumPy_for_Matlab_Users[guide to NumPy for Matlab users].
 
-* If ` theta = np.arange(0, 2*np.pi, 0.1)`, what is `theta`?
+* If `theta = np.arange(0, 2*np.pi, 0.1)`, what is `theta`?
 * What is `np.sin(theta)`? Assign `np.sin(theta)` and 
 `np.cos(theta)` to the variables `sintheta` and `costheta`.
 * We want to plot some graphs, so `import pylab`.
 * Create a plot by using the `pylab.plot()` 
-function thus `pylab.plot(theta, sintheta)`.
+function thus: `pylab.plot(theta, sintheta)`.
 * Display the graph with `pylab.show()`.
-* Close the window. Draw the graph of cos(theta).
+* Close the window. Draw the graph of latexmath:[$\cos(\theta)$].
 * Can you put both lines on the same graph?
 
 Matplotlib has two main interfaces. One, which we will examine 
@@ -111,7 +112,7 @@ Exercise 2: Maps
 ----------------
 
 You will find a simple Python script called `draw_marble.py` 
-in practical 4 directory. Run it. What is displayed? What 
+in the `practical4` directory. Run it. What is displayed? What 
 city is marked? The code is reproduced with some notes below.
 
 [code,python]
@@ -148,7 +149,12 @@ of `satellite_height`). The instance `m` knows
 how to convert from geographical position to 
 a location on the image that will be produced.
 <3> This section adds lines of latitude and 
-longitude and the background image.
+longitude and the background image. Notice that 
+the image is distorted to correctly fit over the 
+map. It is possible to distort any image to 
+correctly fit over any map projection – you 
+just need to know the geographical positions 
+of the corners of the image. 
 <4> This section plots a point on the map. We 
 first need to convert from geographical 
 coordinates to a location on the plotting plane. 
@@ -172,7 +178,6 @@ The arguments of the constructor change with the projection
 type. The Robinson projection only needs `lon_0`, the 
 longitude at the centre of the map, to be specified
 
-
 The file `uki_map.py` produces a basemap of the 
 British Isles. Using this file as a template, write 
 a Python script that reads weather station data 
@@ -183,6 +188,12 @@ or the `Rainfall` class you wrote in Practical 3 to
 help. The map plotting should be moved into a 
 subroutine (what should the arguments be?) and the 
 resulting file should be importable as a module.
+
+Modify your program to accept any number of arguments 
+corresponding to a list of files of weather station 
+data files. Plot all weather stations on the map. 
+Change the limits of the map to only show the region 
+where you have data. 
 
 \\ Exercise 3: Rainfall statistics
 \\ -------------------------------

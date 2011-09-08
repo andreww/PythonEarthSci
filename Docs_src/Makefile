@@ -17,7 +17,7 @@ ex3.html: ex3.txt
 	asciidoc -a icons -a theme=flask -o ../html/ex3.html ex3.txt
 
 ex4.html: ex4.txt
-	asciidoc -a icons -a theme=flask -o ../html/ex4.html ex4.txt
+	asciidoc -a latexmath -a icons -a theme=flask -o ../html/ex4.html ex4.txt
 
 resources.html: resources.txt
 	asciidoc -a icons -a theme=flask -o ../html/resources.html resources.txt

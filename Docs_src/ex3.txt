@@ -11,7 +11,7 @@ language and knowing something about how
 object-orientation works and is implemented in 
 Python will help you understand many features of 
 the language. It is sometimes useful to write your 
-programs in an OO style. More commonly you will make 
+programs in an OO style. More commonly, you will make 
 use of a library that provides an OO interface. Knowing 
 how to write your own OO interface will help you make 
 use of other peoples designs.
@@ -30,16 +30,16 @@ Exercise 1: Random numbers and dates – objets from the outside
 It is often useful to be able to generate (pseudo-) random numbers 
 for use in numerical programs. These can be used for Monte-Carlo 
 simulation or error analysis. Random number generators can be 
-modelled as objects. The way numbers are generated are hidden 
+modelled as objects. The way that numbers are generated is hidden 
 in a "black box". Methods are provided to set up (seed) the 
 generator and return a random number drawn from some distribution. 
 
 Write a simple Python program to calculate the average of 100 random 
 numbers drawn from the range [0.0, 1.0). You will need to import the 
 `random` module, create an instance of the `random.Random` class, use 
-the instance's `seed()` function to set up the generator, and then use 
+the instance's `seed()` method to set up the generator, and then use 
 the `random()` method to generate each random number. In this case, neither 
-the class constructor `random()` or `seed()` need arguments.
+the class constructor, `random()` or `seed()` need arguments.
 
 [NOTE]
 =====
@@ -76,7 +76,7 @@ if your analysis code can read (and write) to compressed
 files. As well as being convenient (you can avoid explicitly 
 compressing or decompressing files before and after you run 
 the analysis script) this can also improve execution time 
-(this is sometimes limited just by the process of getting 
+(which is sometimes limited just by the process of getting 
 data to and from the disk). In common with all data types, 
 we have seen that Python’s built in file type is a class. 
 An instance of this type is returned by the built-in 
@@ -88,8 +88,9 @@ methods that simulate most of those provided by the built-in
 file type. There is also a 
 link:http://docs.python.org/library/bz2.html[`bz2` module], 
 which does a similar 
-thing for bzip2 compression. The directory XXX contains the 
-same Met Office data you worked with on Tuesday but some files 
+thing for bzip2 compression. The directory `metoffice_data` contains 
+more Met Office data like that you worked with on Tuesday. 
+However, some files 
 have been compressed using either bzip2 or gzip. Modify your 
 final data file reading function to automatically accept 
 compressed files. You can assume that compressed files will 
@@ -104,6 +105,7 @@ GzipFile class as follows:
 ----
 import gzip
 f = gzip.GzipFile('filename', 'rb')
+# Do someting with f
 f.close()
 ----
 However, this is different to the way that Python generates 
@@ -117,6 +119,11 @@ f = gzip.open('filename', 'rb')
 # Do someting with f
 f.close()
 ----
+In this approach, `gzip.open()` is nothing more 
+than a convenience wrapper around the `GzipFile` 
+class constructor. The `bz2` module lacks an 
+equivalent function so you will have to make 
+use of the `BZ2File` class directly. 
 ===============================
 
 Does your modified code work with uncompressed files as well
@@ -125,7 +132,7 @@ as files compressed with both gzip and bzip2?
 TIP: You will need to be able to decide if the filename argument 
 represents a compressed file. One way to do this is to use string 
 methods to examine the file name argument. A better (easer and 
-more portable) approach is to use the `splitext ()` function from 
+more portable) approach is to use the `splitext()` function from 
 the `os.path` module. This takes a string as an argument returns 
 a tuple who's second item is the final file extension 
 (`.txt`, `.gz` or `.bzip2`).   
@@ -138,7 +145,7 @@ hold rainfall data in Practical 2 works, but is
 unsatisfactory in a number of ways. The functions you 
 wrote were tied to the data structure so knowledge of 
 the data structure ended up being spread around your 
-code and refactoring becomes difficult. It would sometimes 
+code making refactoring difficult. It would sometimes 
 be useful to generate a different "view" of the data, 
 say by providing a list of rainfall for each January 
 in the data set to make it easy to calculate the 
@@ -148,7 +155,7 @@ a weather station and the rainfall it has measured.
 
 [NOTE]
 ===============================
-Remember that the way to define a class in python 
+Remember that the way to define a class in Python 
 is to make use of the `Class` statement and define 
 functions for methods and variables for attributes. 
 Functions take an extra `self` argument and you need 
@@ -191,6 +198,6 @@ Can you use your new class to calculate the distance between
 pairs of weather stations? Can you calculaute the difference
 in avarage rainfall in January for two weather stations?
 
-
+First date, last date, date structures, return list of rainfall and dates.
 
 
