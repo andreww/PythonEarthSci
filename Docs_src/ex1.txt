@@ -519,5 +519,66 @@ print ciphertext
 
 Can you write a program to perform the inverse function? 
 
+Exercise 7: Dictionaries
+------------------------
 
+Dictionaries are another data type found in 
+Python. A dictionary is equivalent to a hash 
+in Perl, `std::map` in C++ and "maps" in Java,
+all are implementations of associative arrays. 
+Like a list a dictionary links a key to a value. 
+A list's key is the index and this must be an 
+integer. This means that lists have a natural 
+order (for the list `l`, `l[3]` comes after 
+`l[2]` and before `l[4]`). Many data types can 
+play the role of a key in a dictionary. This 
+means dictionaries have no natural order and 
+you should never assume that keys and values 
+will be returned if you iterate through a 
+dictionary twice. This is OK, there are many 
+things in the world you may want to refer to 
+in a program that don't have a natural order 
+(but may have an unnatural order). Words and 
+word definitions in one of those books of 
+the language, for example.
+
+* If `d = {"Around the world in 80 days": "Jules Verne", 
+"The Hobbit": "J R R Tolkien", 
+"A Journey to the center of the Earth": "Jules Verne", 
+"A study in scarlet": "Doyle", "The valley of Fear": 
+"Doyle", "The Lord of the Rings": "Tolkien"}` what is `d`? 
+Is the order you put in the same as the order you got out?
+* What is `type(d)`?
+* What is `d["The Lord of the Rings"]`? What is its type?
+* Can you change the value of `d["The Lord of the Rings"]`
+to `"J R R Tolkien"`?
+* What is `d.keys()`? What about `d.values()`? What type
+are returned by these functions? What do you notice about 
+the order of the elements in these lists?
+* Can a dictionary contain two elements with the same key?
+* Is it OK for two elements to share the same value?
+* Is `"A Journey to the center of the Earth" in d`?
+* Is `"Tolkien" in d`?
+* What does `in` do? 
+* Does it check the keys or the values?
+* How do you think you could iterate through a dictionary?
+* What is `i` in each iteration of `for i in d:`?
+* What if you need the key too? Could you use `d.keys()`, 
+`d.values()` and `zip()`? How? 
+* Can a dictionary have an integer as a value? What about as a key?
+* What about a floating point number or a complex number?
+* Can make a dictionary have a list as a value?
+* What about using a list as a key?
+* Are strings immutable?
+* Are lists mutable?
+* Do you think dictionary keys have to be immutable?
+* What is `d.items()`? What is the type of the elements 
+of the list that is returned? 
+* Have you seen this type before?
+* Can this type be used as the key to a dictionary?
+* Is it mutable?
+
+Dictionaries and tuples turn out to be quite important 
+if you want to really understand Python, but you can 
+get by without them. 
 
