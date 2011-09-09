@@ -45,8 +45,8 @@ monthly_data = {1992: [29.6, 65.0, 58.2, 103.9, 14.7, 9.9,
                        78.2, 71.8, 83.6, 85.6, 164.8, 48.1]}
 
 def plot_rainfall(rainfall, annual=None):
-    # Plot the graph - don't worry about how this function works,
-    # we will look at it on Thursday.
+    # Plot the grapg - don't worry about how this function works,
+    # we will look at this on Thursday
     import datetime
     m_dates = []
     m_rain = []
