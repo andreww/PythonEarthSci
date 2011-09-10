@@ -11,7 +11,7 @@ def plot_point(lats, lons, values):
     # of the map.
     # resolution = 'i' means use intermediate resolution coastlines.
     # lon_0, lat_0 are the central longitude and latitude of the projection.
-    m = Basemap(llcrnrlon=-6.5,llcrnrlat=49.5,urcrnrlon=3.5,urcrnrlat=53.5,
+    m = Basemap(llcrnrlon=-8.5,llcrnrlat=49.5,urcrnrlon=3.5,urcrnrlat=60.5,
             resolution='i',projection='tmerc',lon_0=-4.36,lat_0=54.7)
     # can get the identical map this way (by specifying width and
     # height instead of lat/lon corners)
@@ -19,7 +19,7 @@ def plot_point(lats, lons, values):
     #            resolution='i',projection='tmerc',lon_0=-4.36,lat_0=54.7)
     m.drawcoastlines()
     # draw parallels and meridians.
-    m.drawparallels(np.arange(-40,54.,2.))
+    m.drawparallels(np.arange(-40,61.,2.))
     m.drawmeridians(np.arange(-15.,21.,2.))
     xs = []
     ys = []

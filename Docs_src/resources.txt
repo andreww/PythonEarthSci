@@ -20,4 +20,5 @@ which includes:
 
 
 * link:http://www.doughellmann.com/PyMOTW/[Python Module of the week]
-* 
+* link:http://metson.web.cern.ch/metson/PythonBeginners/[Simon Metson's Python course]
+

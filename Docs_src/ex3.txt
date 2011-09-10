@@ -200,4 +200,5 @@ in avarage rainfall in January for two weather stations?
 
 First date, last date, date structures, return list of rainfall and dates.
 
-
+Some blurb about None for no data...
+also - sorted() for years...:
