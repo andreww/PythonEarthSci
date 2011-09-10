@@ -176,7 +176,7 @@ class Thing:
         print self.counter
 ----
 
-==============================
+===============================
 
 The first step is to create the bare bones of your 
 `Rainfall` class reusing some of the code you wrote 
@@ -188,17 +188,46 @@ attributes for the weather station name, its latitude
 and longitude. Store the data away inside the class as 
 a dictionary of lists.
 
-Now add methods. An `annual_rainfall` method could return 
-a dictionary with years as the keys and the total measured 
-rainfall as the values. An `average_month` could accept an 
-argument specifying the month and return the mean rainfall 
-for that month. 
+Now add methods. An `annual_rainfall` method could 
+return a dictionary with years as the keys and the 
+total measured rainfall in that year as the values. 
 
-Can you use your new class to calculate the distance between 
-pairs of weather stations? Can you calculaute the difference
-in avarage rainfall in January for two weather stations?
+* Can you use your new class to calculate the distance 
+between pairs of weather stations? 
+* Can you calculate the difference in average annual 
+rainfall for two weather stations?
 
-First date, last date, date structures, return list of rainfall and dates.
+You are going to need a more flexible method of extracting 
+subsets of the rainfall information from your xi`Rainfall`
+objects. Create a new method called `list_data()` that returns 
+two lists: a list of floating point numbers giving the rainfall 
+in each month and a list of `date` objects corresponding to 
+the first day of the month referred to in the first list. Add 
+three optional arguments to the `list_data()` method. New `start` 
+and `end` arguments should take date objects and (if the arguments 
+are present) no data before `start` or after `end` 
+should be returned. The third new argument `months` should 
+be a list to allow only a subset of the months to be 
+returned. Once this has been done, you should be able to 
+extract the rainfall data for the winter in Camborne 
+during the 1990s by doing:
 
-Some blurb about None for no data...
-also - sorted() for years...:
+[code,python]
+----
+# Read data from file and set up object
+r = Rainfall("cambornedate.txt.gz")
+# extract winter (Dec, Jan, Feb) data for the 1990s
+rain, months = r.list_data(start=date(1990,1,1),end=(1999,12,31),months=[12,1,2])
+----
+
+* Is spring wetter than autumn in Camborne? 
+* Are winters in Cambridge drier than summers in Yeovilton? 
+
+Finally, you may want to reexamine how the `Rainfall` class 
+you have constructed handles missing data. So far the 
+simple approach of representing missing months of rainfall 
+as having zero rainfall seems to have worked. Is there a 
+better built in type (with a single value) that could be 
+used? Can you modify your `Rainfall` class to handle 
+missing data more correctly? 
+

@@ -50,6 +50,7 @@ make use of NumPy, SciPy, Matplotlib and Basemap. If
 you are using your own computer basic installation 
 instructions can be found link:./installation.html[here].
 
+
 Exercise 1: The `array` object
 ------------------------------
 
@@ -195,5 +196,4 @@ data files. Plot all weather stations on the map.
 Change the limits of the map to only show the region 
 where you have data. 
 
-\\ Exercise 3: Rainfall statistics
-\\ -------------------------------
+
