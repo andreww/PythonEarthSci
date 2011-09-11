@@ -2,7 +2,7 @@
 import datetime as dt
 import numpy as np
 import scipy.stats as stats
-import matplotlib
+#import matplotlib
 import matplotlib.pyplot as plt
 import rainfall
 

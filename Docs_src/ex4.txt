@@ -196,4 +196,111 @@ data files. Plot all weather stations on the map.
 Change the limits of the map to only show the region 
 where you have data. 
 
+It seems to rain more in Bristol than in London. If 
+you cannot see the Pennines from Old Trafford you 
+know it's raining, if you can see the hills you 
+know it's going to rain. Is the west really wetter 
+than the east? You can generate a contour plot to 
+try and find out. 
+
+NOTE:
+=========
+Basemap objects have `contour()` and `contourf()` 
+methods for adding line contours and filled contours 
+of geographical data on a regular grid or a general 
+irregular triangulation.  Both methods have three 
+compulsory arguments (which must be numpy `array` 
+objects and take an optional argument `tri=True` 
+which must be provided if you want Matplotlib to 
+generate the contours from unstructured data. The 
+first three arguments are arrays of x and y positions 
+of each point (converted from the geographical 
+coordinates of the weather stations using the 
+Basemap object as a function) and a list of 
+values (the rainfall at each weather station).
+========
+
+Using `uki_map.py` as a template, create a script 
+that accepts a month and a list of weather station 
+data files as arguments and plots a contour map of 
+the average rainfall across Britain in the chosen 
+month. You should avoid colouring the continents 
+and oceans (remove the `fillcontinents` and 
+`drawmapboundary` lines).
+
+Exercise 3: Time series data and statistics
+-------------------------------------------
+
+As well as simple x-y plots (see Exercise 2) 
+Matplotlib is also able to plot time series 
+data. The key to doing this is to provide a 
+list of `date` objects for one of the axes 
+of the graph. These are then appropriately 
+spaced. In this exercise you will plot a 
+graph of two time series representing the 
+rainfall in, say, June at Yeovilton and 
+Cambridge between 1980 and 2010. You will 
+then look to see if the data is correlated 
+(are wet summers in Yeovilton also wet summers 
+in Cambridge) using the `scipy.stats` module. 
+In doing this, you will take a look at the 
+object oriented interface to Matplotlib.
+
+Write a script that accepts five arguments, one 
+to specify the month of interest, one to specify 
+year to start the time series analysis (start 
+the analysis on the 1 January of that year), one 
+to specify the end year of the analysis (end on 
+the 31 December of that year) and two arguments 
+providing the location of the weather station 
+data files. The script should produce a plot 
+of the rainfall on the chosen month for each 
+year of interest. Try to use the Matplotlib 
+object oriented interface. 
+
+NOTE: 
+========
+Matplotlib’s OO interface breaks graphs down into 
+a number of components. The two most important 
+are the `Figure` and the `Axes`. A `Figure` represents 
+the graph paper while the `Axes` represent the area 
+where a graph will be plotted. A `Figure` can have 
+more than one set of `Axes`. Assuming you have 
+imported `matplotlib.pyplot as plt`, a new figure 
+can be generated using the function `plt.figure()` that 
+accepts an (optional) figure name and returns a figure 
+object. This object has several methods that can be 
+used to add axes. The most useful is probably 
+`.add_subplot(111)` (the numbers specify how to 
+arrange multiple axes in the figure). An axes 
+instance has methods equivalent to  most of 
+the graphing functions provided by Matplotlib. One 
+useful way of using the OO interface is to write a 
+method for your data class that accepts an empty 
+axis as an argument and adda the data to the graph
+and returns the axis so that it can be plotted, but 
+the basic way to plot a graph is shown below.
+[code,python]
+----
+fig = plt.figure()
+ax = fig.add_subplot(111)
+# Maybe accept ax as an argument of a function
+ax.plot(x_data, y_data)
+ax.set_ylabel('Y axis name (units)')
+ax.set_xlabel('X axis name (units)')
+# Maybe return ax
+fig.autofmt_xdate() # If you have dates.
+plt.show()
+----
+========
+
+As far as I can see it seems that monthly rainfall is 
+correlated across the country. Wet months tend to be wet 
+everywhere.  One way to test this is to calculate the 
+correlation coefficient between two time series. The 
+`scipy.stats` module has functions to do this. Use the 
+`scipy.stats.pearsonr` function (which takes two numpy 
+arrays as arguments) to calculate the Pearson correlation 
+coefficent and confidence interval for the correlation. 
+Is the correlation positive? Is it significant? 
 
