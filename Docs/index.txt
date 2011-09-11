@@ -12,22 +12,29 @@ more useful libraries. I've assumed everybody
 is happy with basic procedural programming 
 (i.e. can write a loop, if statment and 
 function in something like Fortran or Matlab).
-The course covers:
+The course is made up of four lectures and 
+four practical sessions. Material can be 
+downloaded from the links below.
 
-* An introduction to the python language.
-* A tour of the python landscape (range of 
-interpreters and distributions, the standard
-library).
-* The language syntax.
-* link:ex1.html[Using the interpereter to perform simple calculations]
-(exercise 1).
-* Python's type system.
-* Writing a script.
-* Modules and namespaces.
-* Reading data and running analysis.
-* Concepts of object-oriented programming.
-* A look at Numpy, Scipy and Matplotlib.
-* How to link:resources.html[go further and find more help].
+* Lecture 1: An introduction to the Python 
+language and landscape. The language syntax.
+* Lecture 2: Using Python. Built in types,
+Writing scripts and modules, the standard library.
+* Lecture 3: Object oriented programming with Python.
+* Lecture 4: Science with Python. NumPy, SciPy and Matplotlib.
+
+* Practical 1: link:ex1.html[Syntax and types]. 
+(link:practical1.tgz[files]|link:practical1_solutions.tgz[solutions])
+* Practical 2: link:ex2.html[Scripts and modules].
+(link:practical2.tgz[files]|link:practical2_solutions.tgz[solutions])
+* Practical 3: link:ex3.html[Object oriented programming].
+(link:practical3.tgz[files]|link:practical3_solutions.tgz[solutions])
+* Practical 4: link:ex4.html[NumPy, SciPy and Matplotlib].
+(link:practical4.tgz[files]|link:practical4_solutions.tgz[solutions])
+
+I have also provided some information on 
+link:resources.html[how to go further and find more help]
+and link:install.html[how to install Python on your computer].
 
 
 
