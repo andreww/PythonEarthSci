@@ -1,4 +1,5 @@
 #!/usr/bin/env python
+import datetime as dt
 import plot_rain_read_full as prrf
 
 class Rainfall:
@@ -32,6 +33,30 @@ class Rainfall:
             tot = tot + rain[month]
             n = n + 1
         return tot/n, n
+
+    def list_data(self, start=None, end=None, months=range(1,13)):
+        """
+        Return a list of montly rainfall (and date objects)
+
+        Return all rainfall data between the (optional) start
+        and end dates (datetime.date objects) as a list 
+        (one month per item) along with a list of date
+        objects (1st of each month with data.
+
+        """
+        rain = []
+        dates = []
+        for year, rainl in zip(self._data.keys(), 
+                              self._data.values()):
+            for m, r in zip(range(1,13), rainl):
+                thisdate = dt.date(year, m, 1)
+                if (((start is None) or (thisdate >= start))
+                      and ((end is None) or (thisdate <= end))
+                      and (m in months)):
+                    rain.append(r)
+                    dates.append(dt.date(year, m, 1))
+        return rain, dates
+        
         
 
 if __name__ == '__main__':
@@ -44,6 +69,8 @@ if __name__ == '__main__':
     for m in range(12):
         av, n = rainfall.avarage_month(m)
         print str(m) + " : " + str(av) + " (n=" + str(n) + ")"
+
+    print rainfall.list_data(start=dt.date(2000,1,1), end=dt.date(2004,2,1), months=[6])
 
     prrf.plot_rainfall(rainfall._data, rainfall.annual_total())
     plt.show()
