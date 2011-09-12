@@ -1,5 +1,5 @@
 
-default: html tarfiles
+default: clean html tarfiles
 
 html: index.html ex1.html ex2.html ex3.html ex4.html resources.html all.html images
 

@@ -74,7 +74,7 @@ to be equal to the string `"one"`?
 the `.size` and `.shape` of these objects?
 * Can you iterate through a NumPy array? What is 
 `i` in each iteration of `for i in np.ones((3,3)):`?
-* What is a `+ np.ones((4))`?
+* What is `a + np.ones((4))`?
 * What is `np.ones((4))*3`? What about 
 `(np.ones((3,3))*3)*(np.ones((3,3))*2)`? 
 Is this matrix multiplication or not?

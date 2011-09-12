@@ -24,8 +24,8 @@ an object. This will allow you to produce more complex
 analysis easily without producing excessively complex code. First
 we will look at some objects from the standard library
 
-Exercise 1: Random numbers and dates – objets from the outside
---------------------------------------------------------------
+Exercise 1: Random numbers and dates – objects from the outside
+---------------------------------------------------------------
 
 It is often useful to be able to generate (pseudo-) random numbers 
 for use in numerical programs. These can be used for Monte-Carlo 
@@ -105,7 +105,7 @@ GzipFile class as follows:
 ----
 import gzip
 f = gzip.GzipFile('filename', 'rb')
-# Do someting with f
+# Do something with f
 f.close()
 ----
 However, this is different to the way that Python generates 
@@ -116,7 +116,7 @@ function thus:
 ----
 import gzip
 f = gzip.open('filename', 'rb')
-# Do someting with f
+# Do something with f
 f.close()
 ----
 In this approach, `gzip.open()` is nothing more 
