@@ -1,7 +1,7 @@
 
 default: clean html tarfiles
 
-html: index.html ex1.html ex2.html ex3.html ex4.html resources.html all.html images
+html: index.html ex1.html ex2.html ex3.html ex4.html resources.html install.html all.html images
 
 pdf: Docs/all.txt Docs/index.txt Docs/ex1.txt Docs/ex2.txt Docs/ex3.txt Docs/ex4.txt Docs/resources.txt
 	a2x Docs/all.txt
@@ -25,7 +25,10 @@ ex4.html: Docs/ex4.txt
 resources.html: Docs/resources.txt
 	asciidoc -a icons -a theme=flask -o ../html/resources.html Docs/resources.txt
 
-all.html: Docs/all.txt Docs/index.txt Docs/ex1.txt Docs/ex2.txt Docs/ex3.txt Docs/ex4.txt Docs/resources.txt
+install.html: Docs/install.txt
+	asciidoc -a icons -a theme=flask -o ../html/install.html Docs/install.txt
+
+all.html: Docs/all.txt Docs/index.txt Docs/ex1.txt Docs/ex2.txt Docs/ex3.txt Docs/ex4.txt Docs/install.txt Docs/resources.txt
 	asciidoc -a latexmath -a icons -a theme=flask -o ../html/all.html Docs/all.txt
 
 images: 

@@ -22,3 +22,4 @@ include::ex3.txt[]
 include::ex4.txt[]
 
 include::resources.txt[]
+include::install.txt[]

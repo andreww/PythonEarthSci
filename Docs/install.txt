@@ -1,0 +1,30 @@
+Installing Python
+=================
+:Author: Andrew Walker
+:Email: andrew.walker@bristol.ac.uk
+:Revision: 0.1
+
+The material covered in this course requires the use of a Python interpreter, standard library and a number of additional modules. Exactly what is needed, and information regarding installation on a range of operating systems is given below. It is important to point out that I’ve only been able to test the installation on Mac OSX (version 10.6). News of problems and successes with other systems is welcome.
+
+Beyond an interpreter and the standard libraries, practicals 2-4 make use of NumPy, SciPy, Matplotlib and the Matplotlib mapping extension Basemap. These are extension packages that include code written in C and Fortran. They are not all available for any interpreter other than CPython. Furthermore, NumPy (a prerequisite for the other modules) has not yet been ported to Python 3. I currently recommend the use of Python 2.7 for any scientific or technical computing.
+
+Enthought Python Distribution
+-----------------------------
+
+By far the easiest way to get everything installed is to use the link:http://www.enthought.com/products/epd.php[Enthought Python Distribution] (EPD).  By putting together a Python interpreter, a large number of scientific libraries, an easy to use installer and a user support channel Enthought has been able to build a business model based on open source software. If you are lucky enough to be an academic, you can take advantage of an offer for a link:http://www.enthought.com/products/edudownload.php[cost free licence]. Installation follows the usual approach on your operating system. If you are on a Mac, it’s probably best to use the Intel/PPC-compatible version (see link:http://www.enthought.com/products/epdfaq.php#mac[this note]).
+
+Linux
+-----
+
+Python is almost certainly already installed on your Linux system. If not the best way to add it is to use your distributions package management system (aptitude, yum etc.). Equally, you should be able to install the other libraries in the same way. Two alternative approaches are to build from source (this isn’t the place to give instructions, but this is what I do) or to use the EPD. 
+
+OSX
+---
+
+OSX 10.6 includes Python 2.6.1 and NumPy 1.2.1. These are quite old versions but are probably good enough to play with.  It is possible to install everything else, some link:https://modelingguru.nasa.gov/docs/DOC-1847[instructions are here], but I’ve never managed to get everything working at the same time. Hence I recommend the use of the EPD.
+
+Windows
+-------
+
+I have no experience of link:http://www.python.org/getit/[installing Python on Windows]. It is supposed to be possible to link:http://www.scipy.org/Installing_SciPy/Windows[install SciPy] etc. but I don’t have access to a suitable computer so that I can test these instructions. I note that C and Fortran 77 compilers are required.  
+
