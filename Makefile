@@ -36,7 +36,10 @@ images:
 	cp -r Docs/images/* ../html/images
 
 tarfiles:
-	git clean -x -f 
+	git clean -x -n Practical1 Practical2 Practical3 Practical4 Practical1_solutions Practical2_solutions Practical3_solutions Practical4_solutions
+	echo "Or ^C in the next 15 seconds"
+	sleep 10
+	git clean -x -n Practical1 Practical2 Practical3 Practical4 Practical1_solutions Practical2_solutions Practical3_solutions Practical4_solutions
 	tar -czf Practical1.tgz Practical1
 	tar -czf Practical2.tgz Practical2
 	tar -czf Practical3.tgz Practical3
