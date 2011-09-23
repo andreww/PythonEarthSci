@@ -24,13 +24,13 @@ Writing scripts and modules, the standard library.
 * Lecture 4: Science with Python. NumPy, SciPy and Matplotlib.
 
 * Practical 1: link:ex1.html[Syntax and types]. 
-(link:practical1.tgz[files]|link:practical1_solutions.tgz[solutions])
+(link:Practical1.tgz[files]|link:Practical1_solutions.tgz[solutions])
 * Practical 2: link:ex2.html[Scripts and modules].
-(link:practical2.tgz[files]|link:practical2_solutions.tgz[solutions])
+(link:Practical2.tgz[files]|link:Practical2_solutions.tgz[solutions])
 * Practical 3: link:ex3.html[Object oriented programming].
-(link:practical3.tgz[files]|link:practical3_solutions.tgz[solutions])
+(link:Practical3.tgz[files]|link:Practical3_solutions.tgz[solutions])
 * Practical 4: link:ex4.html[NumPy, SciPy and Matplotlib].
-(link:practical4.tgz[files]|link:practical4_solutions.tgz[solutions])
+(link:Practical4.tgz[files]|link:Practical4_solutions.tgz[solutions])
 
 I have also provided some information on 
 link:resources.html[how to go further and find more help]
