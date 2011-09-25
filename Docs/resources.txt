@@ -22,3 +22,11 @@ which includes:
 * link:http://www.doughellmann.com/PyMOTW/[Python Module of the week]
 * link:http://metson.web.cern.ch/metson/PythonBeginners/[Simon Metson's Python course]
 
+
+Matplotlib for Python Developers. Sandro Tosi 2009 Packt Publishing
+http://www.packtpub.com/matplotlib-python-development/book
+
+Learning Python. Mark Lutz and David Ascher. O'Reilly
+http://www.rmi.net/~lutz/about-lp4e.html
+
+
