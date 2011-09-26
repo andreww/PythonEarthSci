@@ -2,31 +2,68 @@ Resources
 =========
 :Author: Andrew Walker
 :Email: andrew.walker@bristol.ac.uk
-:Revision: 0.1
+:Revision: 1.0
 
 There is a wide array of documentation and help avalable 
-online which covers everything from learning python as a 
+online which covers everything from learning Python as a 
 first programming language to details of how to make 
-changes to the python interpreter.
+changes to the Python interpreter.
 
 The first port of call for help is often the 
 link:http://docs.python.org/index.html[official documentation], 
 which includes:
 
-* link:http://docs.python.org/tutorial/index.html[Tutorial]
-* link:http://docs.python.org/library/index.html[Library reference]
-* link:http://docs.python.org/reference/index.html[Language reference]
+* link:http://docs.python.org/tutorial/index.html[The Python Tutorial]
+* link:http://docs.python.org/library/index.html[The Standard Library Reference]
+* link:http://docs.python.org/reference/index.html[The Python Language Reference]
 * link:http://docs.python.org/faq/index.html[FAQs]
 
+This course is designed to cover much of the same material described 
+by the Python Tutorial, but I have chosen not to cover the section 
+on link:http://docs.python.org/tutorial/errors.html[errors and exceptions] 
+or some of the fancier tools available for functional programming, packages 
+and modules, and in the Standard Library. 
 
-* link:http://www.doughellmann.com/PyMOTW/[Python Module of the week]
-* link:http://metson.web.cern.ch/metson/PythonBeginners/[Simon Metson's Python course]
+The starting point for documentation on SciPy and NumPy is at 
+link:http://www.scipy.org/[www.scipy.org]. Key documents include:
 
+* link:http://docs.scipy.org/doc/numpy/reference/[The NumPy Reference Guide]
+* link:http://docs.scipy.org/doc/scipy/reference/[The SciPy Reference Guide]
+* link:http://www.scipy.org/Tentative_NumPy_Tutorial[A NumPy tutorial]
+* link: http://www.scipy.org/NumPy_for_Matlab_Users[A guide to NumPy for Matlab users]
 
-Matplotlib for Python Developers. Sandro Tosi 2009 Packt Publishing
-http://www.packtpub.com/matplotlib-python-development/book
+A good way to learn how to construct graphs with Matplotlib is to look at 
+the link:http://matplotlib.sourceforge.net/gallery.html[gallery], which 
+includes the source code used to generate each plot.
 
-Learning Python. Mark Lutz and David Ascher. O'Reilly
-http://www.rmi.net/~lutz/about-lp4e.html
+There is a wide range of other documentation available. This includes the
+link:http://www.doughellmann.com/PyMOTW/[Python Module of the week], an 
+attempt to provide better documentation for the Standard Library and 
+a number of books. I've used two when writing this course:
 
+* Matplotlib for Python Developers. S. Tosi (2009) 
+link:http://www.packtpub.com/matplotlib-python-development/book[Packt Publishing]
+
+* link:http://www.rmi.net/~lutz/about-lp4e.html[Learning Python].
+M. Lutz and D. Ascher. O'Reilly
+
+I've also made use of material from 
+link:http://metson.web.cern.ch/metson/PythonBeginners/[Simon Metson's Python course],
+which is run for the University's 
+link:https://www.acrc.bris.ac.uk/[Advanced Computing Research Centre]. 
+
+I've mentioned other useful resources. These are, in no particular order:
+
+* link:http://www.python.org/[www.python.org]
+* link:http://pypi.python.org/[The Python Package Index]
+* link:http://wiki.python.org/moin/PythonDistributions[A list of Python distributions]
+* link:http://www.enthought.com/products/epd.php[The Enthought Python Distribution]
+* link:http://www.python.org/dev/peps/[The Python Enhancement Proposals index] 
+* link:http://docs.python.org/devguide/[The Python Developer's Guide]
+* link:http://matplotlib.sourceforge.net/basemap/doc/html/[Matplotlib's Basemap toolkit]
+* link:http://docs.python.org/library/profile.html[Python profilers]
+* link:http://wiki.python.org/moin/PythonDebuggers[Python debuggers]
+* link:http://pychecker.sourceforge.net/[PyChecker] (lint for Python)
+* link:http://docs.python.org/library/unittest.html[The Python unittest and related tools]
+* link:http://docs.python.org/library/pydoc.html[The pydoc documentation system]
 
