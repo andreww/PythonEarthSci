@@ -41,11 +41,9 @@ link:http://www.doughellmann.com/PyMOTW/[Python Module of the week], an
 attempt to provide better documentation for the Standard Library and 
 a number of books. I've used two when writing this course:
 
-* Matplotlib for Python Developers. S. Tosi (2009) 
-link:http://www.packtpub.com/matplotlib-python-development/book[Packt Publishing]
+* Matplotlib for Python Developers. S. Tosi (2009) link:http://www.packtpub.com/matplotlib-python-development/book[Packt Publishing]
 
-* link:http://www.rmi.net/~lutz/about-lp4e.html[Learning Python].
-M. Lutz and D. Ascher. O'Reilly
+* link:http://www.rmi.net/~lutz/about-lp4e.html[Learning Python]. M. Lutz and D. Ascher. O'Reilly
 
 I've also made use of material from 
 link:http://metson.web.cern.ch/metson/PythonBeginners/[Simon Metson's Python course],
