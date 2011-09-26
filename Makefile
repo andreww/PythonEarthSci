@@ -1,7 +1,7 @@
 
 default: clean html tarfiles
 
-html: index.html ex1.html ex2.html ex3.html ex4.html resources.html install.html all.html images
+html: index.html ex1.html ex2.html ex3.html ex4.html resources.html install.html all.html images slides
 
 pdf: Docs/all.txt Docs/index.txt Docs/ex1.txt Docs/ex2.txt Docs/ex3.txt Docs/ex4.txt Docs/resources.txt
 	a2x Docs/all.txt
