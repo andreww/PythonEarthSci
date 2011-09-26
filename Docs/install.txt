@@ -2,7 +2,7 @@ Installing Python
 =================
 :Author: Andrew Walker
 :Email: andrew.walker@bristol.ac.uk
-:Revision: 0.1
+:Revision: 1.0
 
 The material covered in this course requires the use of a Python interpreter, standard library and a number of additional modules. Exactly what is needed, and information regarding installation on a range of operating systems is given below. It is important to point out that I’ve only been able to test the installation on Mac OSX (version 10.6). News of problems and successes with other systems is welcome.
 

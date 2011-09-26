@@ -2,7 +2,7 @@ Exercise 2: Scripts and modules
 ===============================
 :Author: Andrew Walker
 :Email: andrew.walker@bristol.ac.uk
-:Revision: 0.1
+:Revision: 1.0
 
 You have now seen a large portion of the Python 
 language; enough to be able to write useful programs 

@@ -2,7 +2,7 @@ Practical 3: Object oriented programming
 ========================================
 :Author: Andrew Walker
 :Email: andrew.walker@bristol.ac.uk
-:Revision: 0.1
+:Revision: 1.0
 
 We've seen that it's not necessary to know about 
 object-oriented (OO) programming to write useful 

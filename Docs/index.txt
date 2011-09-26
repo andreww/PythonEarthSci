@@ -2,7 +2,7 @@ Python for Earth Scientists
 ===========================
 :Author: Andrew Walker
 :Email: andrew.walker@bristol.ac.uk
-:Revision: 0.1
+:Revision: 1.0
 
 These pages contain the notes and excercises for 
 a medium-length (two afternoon) course designed
@@ -17,11 +17,11 @@ four practical sessions. Material can be
 downloaded from the links below.
 
 * Lecture 1: An introduction to the Python 
-language and landscape. The language syntax.
+language and landscape. The language syntax. (link:PfES_1.key[keynote]|link:PfES_1.pdf[pdf])
 * Lecture 2: Using Python. Built in types,
-Writing scripts and modules, the standard library.
-* Lecture 3: Object oriented programming with Python.
-* Lecture 4: Science with Python. NumPy, SciPy and Matplotlib.
+Writing scripts and modules, the standard library. (link:PfES_2.key[keynote]|link:PfES_2.pdf[pdf])
+* Lecture 3: Object oriented programming with Python. (link:PfES_3.key[keynote]|link:PfES_3.pdf[pdf])
+* Lecture 4: Science with Python. NumPy, SciPy and Matplotlib. (link:PfES_4.key[keynote]|link:PfES_4.pdf[pdf])
 
 * Practical 1: link:ex1.html[Syntax and types]. 
 (link:Practical1.tgz[files]|link:Practical1_solutions.tgz[solutions])

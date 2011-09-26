@@ -35,6 +35,10 @@ images:
 	mkdir ../html/images
 	cp -r Docs/images/* ../html/images
 
+slides:
+	cp Keynote/*.key ../html
+	cp Keynote/*.pdf ../html
+
 tarfiles:
 	git clean -x -n Practical1 Practical2 Practical3 Practical4 Practical1_solutions Practical2_solutions Practical3_solutions Practical4_solutions
 	echo "Or ^C in the next 15 seconds"

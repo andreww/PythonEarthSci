@@ -2,7 +2,7 @@ Practical 1: First steps
 =======================
 :Author: Andrew Walker
 :Email: andrew.walker@bristol.ac.uk
-:Revision: 0.1
+:Revision: 1.0
 
 In exercise you will learn how to use a
 Python interpreter interactively and to run simple pieces 

@@ -2,7 +2,7 @@ Practical 4: NumPy, SciPy and Matplotlib
 ========================================
 :Author: Andrew Walker
 :Email: andrew.walker@bristol.ac.uk
-:Revision: 0.1
+:Revision: 1.0
 
 In the previous three practicals you have been 
 introduced to the fundamentals of the Python 
